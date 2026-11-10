@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl Power - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link rel="stylesheet" href="static/css/alert.css">
+    <script src="static/js/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Girl Power: Inspire-se</h2>
+            <div class="content-box">
+                <p>O empoderamento feminino é sobre reconhecer a força, a capacidade e o valor inerente de cada mulher. Ao longo da história, mulheres extraordinárias quebraram barreiras, desafiaram convenções e abriram caminhos para as gerações futuras. Suas histórias nos inspiram a acreditar em nosso próprio potencial e a lutar por nossos sonhos.</p>
+
+                <div class="info-section">
+                    <h3>Mulheres Brasileiras Inspiradoras</h3>
+                    <div class="inspirational-women">
+                        <div class="woman-card">
+                            <h4>Dandara dos Palmares (?-1694)</h4>
+                            <p>Guerreira e líder do Quilombo dos Palmares, Dandara lutou bravamente pela liberdade de seu povo. Sua coragem e determinação a tornaram um símbolo de resistência e empoderamento feminino negro no Brasil.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Maria Quitéria (1792-1853)</h4>
+                            <p>Primeira mulher a assentar praça no Exército Brasileiro, Maria Quitéria disfarçou-se de homem para lutar pela independência do Brasil. Sua ousadia e patriotismo abriram precedentes para a participação feminina nas forças armadas.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Chiquinha Gonzaga (1847-1935)</h4>
+                            <p>Compositora, pianista e regente, foi a primeira mulher a reger uma orquestra no Brasil. Enfrentou preconceitos da época para seguir sua paixão pela música e se tornou uma das maiores compositoras brasileiras.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Carolina Maria de Jesus (1914-1977)</h4>
+                            <p>Escritora e catadora de papel, Carolina transformou sua experiência na favela em literatura. Seu livro "Quarto de Despejo" deu voz aos marginalizados e mostrou que o talento pode florescer em qualquer circunstância.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Conceição Evaristo (1946-)</h4>
+                            <p>Escritora e acadêmica, Conceição é uma das principais vozes da literatura afro-brasileira contemporânea. Sua obra aborda questões de gênero, raça e classe, inspirando uma nova geração de escritoras negras.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Maria da Penha (1945-)</h4>
+                            <p>Farmacêutica e ativista, sobreviveu a duas tentativas de assassinato pelo ex-marido. Sua luta por justiça resultou na Lei Maria da Penha, marco na proteção das mulheres contra a violência doméstica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Mulheres que Mudaram o Mundo</h3>
+                    <div class="inspirational-women">
+                        <div class="woman-card">
+                            <h4>Marie Curie (1867-1934)</h4>
+                            <p>Primeira mulher a ganhar um Prêmio Nobel e única pessoa a ganhar Nobel em duas áreas diferentes (Física e Química). Suas descobertas revolucionaram a ciência e abriram portas para mulheres na pesquisa científica.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Malala Yousafzai (1997-)</h4>
+                            <p>Ativista paquistanesa pelos direitos das mulheres e educação. Sobreviveu a um atentado do Taliban e se tornou a pessoa mais jovem a receber o Prêmio Nobel da Paz, aos 17 anos.</p>
+                        </div>
+                        
+                        <div class="woman-card">
+                            <h4>Rosa Parks (1913-2005)</h4>
+                            <p>Ativista americana dos direitos civis que se recusou a ceder seu lugar no ônibus a um homem branco, desencadeando o movimento pelos direitos civis nos Estados Unidos. Sua coragem mudou a história.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Centros de Ajuda Psicológica</h3>
+                    <p>Cuidar da saúde mental é fundamental para o empoderamento feminino. Encontre centros de apoio psicológico próximos a você:</p>
+                    
+                    <div class="location-section">
+                        <div class="search-section">
+                            <h4>Buscar por localização:</h4>
+                            <div class="search-inputs">
+                                <input type="text" id="citySearchPsicologia" placeholder="Digite sua cidade (ex: São Paulo, Rio de Janeiro)" class="search-input">
+                                <select id="stateFilterPsicologia" class="search-select">
+                                    <option value="">Todos os estados</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Filtrar por tipo de atendimento:</h4>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-all-psico" checked>
+                                    <span>Todos os tipos</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-caps">
+                                    <span>CAPS</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-clinica">
+                                    <span>Clínica</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-hospital">
+                                    <span>Hospital</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-ong">
+                                    <span>ONG</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-universidade">
+                                    <span>Universidade</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button id="searchBtnPsicologia" class="location-btn">🧠 Buscar Centros de Ajuda Psicológica</button>
+                        <div id="searchResultsPsicologia" class="location-results"></div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Frases Inspiradoras</h3>
+                    <div class="quotes-section">
+                        <blockquote>
+                            "Não se nasce mulher: torna-se mulher." - Simone de Beauvoir
+                        </blockquote>
+                        <blockquote>
+                            "Uma mulher sem um homem é como um peixe sem uma bicicleta." - Gloria Steinem
+                        </blockquote>
+                        <blockquote>
+                            "Eu não desejo que as mulheres tenham poder sobre os homens, mas sobre elas mesmas." - Mary Wollstonecraft
+                        </blockquote>
+                        <blockquote>
+                            "O futuro pertence àqueles que acreditam na beleza de seus sonhos." - Eleanor Roosevelt
+                        </blockquote>
+                        <blockquote>
+                            "Seja você mesma. Todos os outros já existem." - Oscar Wilde
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Dicas para o Empoderamento Pessoal</h3>
+                    <div class="empowerment-tips">
+                        <div class="tip-card">
+                            <h4>💪 Acredite em Si Mesma</h4>
+                            <p>Reconheça suas qualidades, celebre suas conquistas e não tenha medo de sonhar grande. Você é capaz de muito mais do que imagina.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4>📚 Invista em Educação</h4>
+                            <p>O conhecimento é uma ferramenta poderosa de transformação. Continue aprendendo, seja através de cursos, livros ou experiências.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4>🤝 Construa uma Rede de Apoio</h4>
+                            <p>Cerque-se de pessoas que acreditam em você e apoiam seus objetivos. Mulheres empoderadas empoderam outras mulheres.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4>🎯 Defina Seus Objetivos</h4>
+                            <p>Tenha clareza sobre o que você quer alcançar e trace um plano para chegar lá. Pequenos passos levam a grandes conquistas.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4>🗣️ Use Sua Voz</h4>
+                            <p>Não tenha medo de expressar suas opiniões e defender aquilo em que acredita. Sua voz importa e pode fazer a diferença.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4>💝 Pratique o Autocuidado</h4>
+                            <p>Cuide da sua saúde física e mental. Você não pode cuidar dos outros se não cuidar de si mesma primeiro.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Sua História Também Importa</h3>
+                    <p>Lembre-se: você também pode ser uma fonte de inspiração para outras mulheres. Cada obstáculo superado, cada meta alcançada, cada vez que você se levanta após uma queda - tudo isso faz parte de uma história poderosa de empoderamento.</p>
+                    <p>Compartilhe suas experiências, apoie outras mulheres em suas jornadas e continue escrevendo sua própria história de sucesso. O mundo precisa da sua luz, da sua força e da sua contribuição única.</p>
+                    <div class="call-to-action">
+                        <button class="share-story-btn" onclick="window.location.href='compartilhar_historia.html'">Compartilhe Sua História</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Base de dados de Centros de Ajuda Psicológica no Brasil
+        const psicologiaDatabase = [
+            // São Paulo
+            {
+                "name": "CAPS III Adulto - Centro",
+                "type": "CAPS",
+                "address": "Rua Frederico Alvarenga, 259 - Bela Vista, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133133100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico 24h, acompanhamento psiquiátrico, grupos terapêuticos",
+                "specialty": "Transtornos mentais severos e persistentes"
+            },
+            {
+                "name": "Centro de Valorização da Vida (CVV) - São Paulo",
+                "type": "ONG",
+                "address": "Rua Tupi, 564 - Pacaembu, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "188",
+                "hours": "24 horas",
+                "services": "Apoio emocional e prevenção do suicídio por telefone, chat e email",
+                "specialty": "Prevenção do suicídio e apoio emocional"
+            },
+            {
+                "name": "Instituto de Psiquiatria do Hospital das Clínicas (IPq)",
+                "type": "Hospital",
+                "address": "Rua Dr. Ovídio Pires de Campos, 785 - Cerqueira César, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1126616000",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico e psicológico especializado, pesquisa",
+                "specialty": "Transtornos psiquiátricos complexos"
+            },
+            {
+                "name": "Clínica Psicológica da PUC-SP",
+                "type": "Universidade",
+                "address": "Rua Monte Alegre, 984 - Perdizes, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133133200",
+                "hours": "Segunda a sexta: 8h às 20h",
+                "services": "Psicoterapia individual e em grupo, atendimento a baixo custo",
+                "specialty": "Atendimento psicológico para comunidade"
+            },
+            {
+                "name": "Centro de Atenção Psicossocial da Mulher",
+                "type": "CAPS",
+                "address": "Rua Dr. Cesário Mota Jr., 112 - Vila Buarque, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133133300",
+                "hours": "Segunda a sexta: 7h às 19h",
+                "services": "Atendimento psicológico especializado para mulheres",
+                "specialty": "Saúde mental feminina, violência de gênero"
+            },
+            {
+                "name": "Clínica de Psicologia da USP",
+                "type": "Universidade",
+                "address": "Av. Prof. Mello Moraes, 1721 - Cidade Universitária, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1130914173",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia, avaliação psicológica, grupos terapêuticos",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Rio de Janeiro
+            {
+                "name": "CAPS III Rubens Corrêa",
+                "type": "CAPS",
+                "address": "Rua Voluntários da Pátria, 301 - Botafogo, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122633100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais graves"
+            },
+            {
+                "name": "Instituto de Psiquiatria da UFRJ (IPUB)",
+                "type": "Hospital",
+                "address": "Av. Venceslau Brás, 71 - Urca, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122633200",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psiquiátrico especializado, pesquisa",
+                "specialty": "Transtornos psiquiátricos complexos"
+            },
+            {
+                "name": "Clínica de Psicologia da PUC-Rio",
+                "type": "Universidade",
+                "address": "Rua Marquês de São Vicente, 225 - Gávea, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122633300",
+                "hours": "Segunda a sexta: 8h às 20h",
+                "services": "Psicoterapia individual e familiar, atendimento social",
+                "specialty": "Atendimento psicológico comunitário"
+            },
+            {
+                "name": "Centro de Atenção Psicossocial da Mulher - Nise da Silveira",
+                "type": "CAPS",
+                "address": "Rua Ramiro Magalhães, 521 - Engenho de Dentro, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122633400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento especializado para mulheres em sofrimento mental",
+                "specialty": "Saúde mental feminina"
+            },
+
+            // Belo Horizonte
+            {
+                "name": "CAPS III Barreiro",
+                "type": "CAPS",
+                "address": "Rua Olinto Meireles, 181 - Barreiro, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132383100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital das Clínicas da UFMG - Psiquiatria",
+                "type": "Hospital",
+                "address": "Av. Prof. Alfredo Balena, 110 - Santa Efigênia, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132383200",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Transtornos psiquiátricos"
+            },
+            {
+                "name": "Clínica de Psicologia da PUC Minas",
+                "type": "Universidade",
+                "address": "Av. Dom José Gaspar, 500 - Coração Eucarístico, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132383300",
+                "hours": "Segunda a sexta: 8h às 20h",
+                "services": "Psicoterapia individual e em grupo",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Salvador
+            {
+                "name": "CAPS III Aristides Novis",
+                "type": "CAPS",
+                "address": "Rua Aristides Novis, 105 - Federação, Salvador - BA",
+                "city": "Salvador",
+                "state": "BA",
+                "phone": "7132353100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais graves"
+            },
+            {
+                "name": "Hospital Juliano Moreira",
+                "type": "Hospital",
+                "address": "Estrada do Saboeiro, s/n - Narandiba, Salvador - BA",
+                "city": "Salvador",
+                "state": "BA",
+                "phone": "7132353200",
+                "hours": "24 horas",
+                "services": "Atendimento psiquiátrico e psicológico",
+                "specialty": "Saúde mental"
+            },
+            {
+                "name": "Clínica de Psicologia da UFBA",
+                "type": "Universidade",
+                "address": "Rua Aristides Novis, 197 - Federação, Salvador - BA",
+                "city": "Salvador",
+                "state": "BA",
+                "phone": "7132353300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia, avaliação psicológica",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Fortaleza
+            {
+                "name": "CAPS III Messejana",
+                "type": "CAPS",
+                "address": "Rua Frei Vidal, 1821 - Messejana, Fortaleza - CE",
+                "city": "Fortaleza",
+                "state": "CE",
+                "phone": "8532613100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital de Saúde Mental Professor Frota Pinto",
+                "type": "Hospital",
+                "address": "Rua Monsenhor Furtado, s/n - Rodolfo Teófilo, Fortaleza - CE",
+                "city": "Fortaleza",
+                "state": "CE",
+                "phone": "8532613200",
+                "hours": "24 horas",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Saúde mental"
+            },
+            {
+                "name": "Clínica de Psicologia da UFC",
+                "type": "Universidade",
+                "address": "Av. da Universidade, 2853 - Benfica, Fortaleza - CE",
+                "city": "Fortaleza",
+                "state": "CE",
+                "phone": "8532613300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia individual e em grupo",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Recife
+            {
+                "name": "CAPS III Profeta Gentileza",
+                "type": "CAPS",
+                "address": "Rua Joaquim Nabuco, 181 - Graças, Recife - PE",
+                "city": "Recife",
+                "state": "PE",
+                "phone": "8133213100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais graves"
+            },
+            {
+                "name": "Hospital Ulysses Pernambucano",
+                "type": "Hospital",
+                "address": "Estrada do Arraial, 2723 - Tamarineira, Recife - PE",
+                "city": "Recife",
+                "state": "PE",
+                "phone": "8133213200",
+                "hours": "24 horas",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Saúde mental"
+            },
+            {
+                "name": "Clínica de Psicologia da UFPE",
+                "type": "Universidade",
+                "address": "Av. Prof. Moraes Rego, 1235 - Cidade Universitária, Recife - PE",
+                "city": "Recife",
+                "state": "PE",
+                "phone": "8133213300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia, avaliação psicológica",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Porto Alegre
+            {
+                "name": "CAPS III Cais Mental",
+                "type": "CAPS",
+                "address": "Rua Prof. Álvaro Alvim, 882 - Rio Branco, Porto Alegre - RS",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "phone": "5133203100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital de Clínicas de Porto Alegre - Psiquiatria",
+                "type": "Hospital",
+                "address": "Rua Ramiro Barcelos, 2350 - Santa Cecília, Porto Alegre - RS",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "phone": "5133203200",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Transtornos psiquiátricos"
+            },
+            {
+                "name": "Clínica de Psicologia da UFRGS",
+                "type": "Universidade",
+                "address": "Rua Ramiro Barcelos, 2600 - Santa Cecília, Porto Alegre - RS",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "phone": "5133203300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia individual e em grupo",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Curitiba
+            {
+                "name": "CAPS III Curitiba",
+                "type": "CAPS",
+                "address": "Rua Capitão Souza Franco, 695 - Prado Velho, Curitiba - PR",
+                "city": "Curitiba",
+                "state": "PR",
+                "phone": "4133213100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital de Clínicas da UFPR - Psiquiatria",
+                "type": "Hospital",
+                "address": "Rua General Carneiro, 181 - Alto da Glória, Curitiba - PR",
+                "city": "Curitiba",
+                "state": "PR",
+                "phone": "4133213200",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Transtornos psiquiátricos"
+            },
+            {
+                "name": "Clínica de Psicologia da PUC-PR",
+                "type": "Universidade",
+                "address": "Rua Imaculada Conceição, 1155 - Prado Velho, Curitiba - PR",
+                "city": "Curitiba",
+                "state": "PR",
+                "phone": "4133213300",
+                "hours": "Segunda a sexta: 8h às 20h",
+                "services": "Psicoterapia individual e familiar",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Brasília
+            {
+                "name": "CAPS III Brasília",
+                "type": "CAPS",
+                "address": "SGAN 905 - Asa Norte, Brasília - DF",
+                "city": "Brasília",
+                "state": "DF",
+                "phone": "6133213100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital Universitário de Brasília - Psiquiatria",
+                "type": "Hospital",
+                "address": "SGAN 604/605 - Asa Norte, Brasília - DF",
+                "city": "Brasília",
+                "state": "DF",
+                "phone": "6133213200",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Transtornos psiquiátricos"
+            },
+            {
+                "name": "Clínica de Psicologia da UnB",
+                "type": "Universidade",
+                "address": "Campus Universitário Darcy Ribeiro - Asa Norte, Brasília - DF",
+                "city": "Brasília",
+                "state": "DF",
+                "phone": "6133213300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia, avaliação psicológica",
+                "specialty": "Atendimento psicológico universitário"
+            },
+
+            // Goiânia
+            {
+                "name": "CAPS III Vida",
+                "type": "CAPS",
+                "address": "Rua 136, 149 - Setor Sul, Goiânia - GO",
+                "city": "Goiânia",
+                "state": "GO",
+                "phone": "6233213100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital das Clínicas da UFG - Psiquiatria",
+                "type": "Hospital",
+                "address": "1ª Avenida, s/n - Setor Leste Universitário, Goiânia - GO",
+                "city": "Goiânia",
+                "state": "GO",
+                "phone": "6233213200",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Transtornos psiquiátricos"
+            },
+
+            // Florianópolis
+            {
+                "name": "CAPS III Continente",
+                "type": "CAPS",
+                "address": "Rua Deputado Antônio Edu Vieira, 999 - Pantanal, Florianópolis - SC",
+                "city": "Florianópolis",
+                "state": "SC",
+                "phone": "4833213100",
+                "hours": "24 horas",
+                "services": "Atendimento psicológico e psiquiátrico 24h",
+                "specialty": "Transtornos mentais severos"
+            },
+            {
+                "name": "Hospital Universitário da UFSC - Psiquiatria",
+                "type": "Hospital",
+                "address": "Rua Prof. Maria Flora Pausewang, s/n - Trindade, Florianópolis - SC",
+                "city": "Florianópolis",
+                "state": "SC",
+                "phone": "4833213200",
+                "hours": "Segunda a sexta: 7h às 17h",
+                "services": "Atendimento psiquiátrico especializado",
+                "specialty": "Transtornos psiquiátricos"
+            },
+            {
+                "name": "Clínica de Psicologia da UFSC",
+                "type": "Universidade",
+                "address": "Campus Universitário - Trindade, Florianópolis - SC",
+                "city": "Florianópolis",
+                "state": "SC",
+                "phone": "4833213300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Psicoterapia individual e em grupo",
+                "specialty": "Atendimento psicológico universitário"
+            }
+        ];
+
+        // Função para normalizar texto (remover acentos e converter para minúsculas)
+        function normalizeText(text) {
+            if (!text) return '';
+            return text.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9\s]/g, '')
+                .trim();
+        }
+
+        // Função para calcular similaridade entre strings
+        function calculateSimilarity(str1, str2) {
+            if (!str1 || !str2) return 0;
+            
+            const normalized1 = normalizeText(str1);
+            const normalized2 = normalizeText(str2);
+            
+            // Verificar correspondência exata
+            if (normalized1 === normalized2) return 1;
+            
+            // Verificar se uma string contém a outra
+            if (normalized1.includes(normalized2) || normalized2.includes(normalized1)) {
+                return 0.9;
+            }
+            
+            // Calcular similaridade por caracteres comuns
+            const maxLength = Math.max(normalized1.length, normalized2.length);
+            if (maxLength === 0) return 0;
+            
+            let matches = 0;
+            const minLength = Math.min(normalized1.length, normalized2.length);
+            
+            for (let i = 0; i < minLength; i++) {
+                if (normalized1[i] === normalized2[i]) {
+                    matches++;
+                }
+            }
+            
+            return matches / maxLength;
+        }
+
+        // Função para obter cidades similares
+        function getSimilarCities(searchCity) {
+            const allCities = [...new Set(psicologiaDatabase.map(center => center.city))];
+            const suggestions = [];
+            
+            allCities.forEach(city => {
+                const similarity = calculateSimilarity(searchCity, city);
+                if (similarity > 0.3) {
+                    suggestions.push({ city, similarity });
+                }
+            });
+            
+            return suggestions
+                .sort((a, b) => b.similarity - a.similarity)
+                .slice(0, 5)
+                .map(item => item.city);
+        }
+
+        // Função para obter filtros selecionados
+        function getSelectedFilters() {
+            const filters = [];
+            const filterAll = document.getElementById('filter-all-psico');
+            
+            if (filterAll && filterAll.checked) {
+                return ['all'];
+            }
+            
+            const filterIds = ['caps', 'clinica', 'hospital', 'ong', 'universidade'];
+            
+            filterIds.forEach(filterId => {
+                const checkbox = document.getElementById(`filter-${filterId}`);
+                if (checkbox && checkbox.checked) {
+                    filters.push(filterId);
+                }
+            });
+            
+            return filters.length > 0 ? filters : ['all'];
+        }
+
+        // Função para verificar se o tipo corresponde aos filtros
+        function matchesTypeFilter(type, filters) {
+            if (filters.includes('all')) {
+                return true;
+            }
+            
+            const normalizedType = normalizeText(type);
+            
+            return filters.some(filter => {
+                switch (filter) {
+                    case 'caps':
+                        return normalizedType.includes('caps');
+                    case 'clinica':
+                        return normalizedType.includes('clinica');
+                    case 'hospital':
+                        return normalizedType.includes('hospital');
+                    case 'ong':
+                        return normalizedType.includes('ong');
+                    case 'universidade':
+                        return normalizedType.includes('universidade');
+                    default:
+                        return false;
+                }
+            });
+        }
+
+        // Função para buscar centros de psicologia
+        function searchPsicologia() {
+            const citySearch = document.getElementById('citySearchPsicologia').value.trim();
+            const stateFilter = document.getElementById('stateFilterPsicologia').value;
+            const selectedFilters = getSelectedFilters();
+            const resultsDiv = document.getElementById('searchResultsPsicologia');
+            const searchBtn = document.getElementById('searchBtnPsicologia');
+            
+            // Mostrar loading
+            searchBtn.innerHTML = '<span class="loading"></span> Buscando...';
+            searchBtn.disabled = true;
+            
+            setTimeout(() => {
+                if (!citySearch && !stateFilter) {
+                    resultsDiv.innerHTML = '<div class="no-results">Por favor, digite uma cidade ou selecione um estado para buscar.</div>';
+                    resetSearchButton();
+                    return;
+                }
+                
+                let filteredCenters = psicologiaDatabase.filter(center => {
+                    // Filtro por tipo
+                    if (!matchesTypeFilter(center.type, selectedFilters)) {
+                        return false;
+                    }
+                    
+                    // Filtro por estado
+                    if (stateFilter && center.state !== stateFilter) {
+                        return false;
+                    }
+                    
+                    // Filtro por cidade
+                    if (citySearch) {
+                        const similarity = calculateSimilarity(citySearch, center.city);
+                        return similarity > 0.4;
+                    }
+                    
+                    return true;
+                });
+                
+                if (filteredCenters.length === 0) {
+                    const similarCities = getSimilarCities(citySearch);
+                    let noResultsHTML = '<div class="no-results">';
+                    noResultsHTML += '<h4>🔍 Nenhum centro encontrado</h4>';
+                    noResultsHTML += `<p>Não encontramos centros de ajuda psicológica em "${citySearch}"`;
+                    if (stateFilter) {
+                        const stateName = document.querySelector(`#stateFilterPsicologia option[value="${stateFilter}"]`).textContent;
+                        noResultsHTML += ` - ${stateName}`;
+                    }
+                    noResultsHTML += '.</p>';
+                    
+                    if (similarCities.length > 0) {
+                        noResultsHTML += '<p><strong>🏙️ Cidades próximas com centros disponíveis:</strong></p>';
+                        noResultsHTML += '<ul>';
+                        similarCities.forEach(city => {
+                            noResultsHTML += `<li><a href="#" onclick="searchSimilarCityPsicologia('${city}')" style="color: #8B5CF6; text-decoration: none; font-weight: 500;">${city}</a></li>`;
+                        });
+                        noResultsHTML += '</ul>';
+                    }
+                    
+                    noResultsHTML += '<p><em>💡 Dica: Tente buscar por cidades maiores da sua região ou remova alguns filtros.</em></p>';
+                    noResultsHTML += '</div>';
+                    
+                    resultsDiv.innerHTML = noResultsHTML;
+                    resetSearchButton();
+                    return;
+                }
+                
+                // Ordenar por relevância
+                if (citySearch) {
+                    filteredCenters.sort((a, b) => {
+                        const similarityA = calculateSimilarity(citySearch, a.city);
+                        const similarityB = calculateSimilarity(citySearch, b.city);
+                        return similarityB - similarityA;
+                    });
+                }
+                
+                let resultsHTML = `<h4>🎯 Encontrados ${filteredCenters.length} centro(s)</h4>`;
+                
+                filteredCenters.forEach((center, index) => {
+                    resultsHTML += `<div class="psychology-result" style="animation-delay: ${index * 0.1}s">`;
+                    resultsHTML += `<h5>🧠 ${center.name}</h5>`;
+                    resultsHTML += `<p><strong>🏢 Tipo:</strong> ${center.type}</p>`;
+                    resultsHTML += `<p><strong>📍 Localização:</strong> ${center.city} - ${center.state}</p>`;
+                    resultsHTML += `<p><strong>🏠 Endereço:</strong> ${center.address}</p>`;
+                    
+                    if (center.phone) {
+                        const formattedPhone = formatPhone(center.phone);
+                        resultsHTML += `<p><strong>📞 Telefone:</strong> <a href="tel:${center.phone}" style="color: #8B5CF6; text-decoration: none;">${formattedPhone}</a></p>`;
+                    }
+                    
+                    resultsHTML += `<p><strong>🕒 Horário:</strong> ${center.hours}</p>`;
+                    resultsHTML += `<p><strong>📋 Serviços:</strong> ${center.services}</p>`;
+                    
+                    if (center.specialty) {
+                        resultsHTML += `<p><strong>⭐ Especialidade:</strong> ${center.specialty}</p>`;
+                    }
+                    
+                    resultsHTML += '</div>';
+                });
+                
+                resultsDiv.innerHTML = resultsHTML;
+                resetSearchButton();
+                
+                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 800);
+        }
+
+        // Função para resetar botão de busca
+        function resetSearchButton() {
+            const searchBtn = document.getElementById('searchBtnPsicologia');
+            searchBtn.innerHTML = '🧠 Buscar Centros de Ajuda Psicológica';
+            searchBtn.disabled = false;
+        }
+
+        // Função para formatar telefone
+        function formatPhone(phone) {
+            if (!phone) return '';
+            
+            const cleaned = phone.replace(/\D/g, '');
+            
+            if (cleaned.length === 11) {
+                return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7)}`;
+            } else if (cleaned.length === 10) {
+                return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 6)}-${cleaned.slice(6)}`;
+            } else if (cleaned.length === 3) {
+                return cleaned; // Para números como 188
+            }
+            
+            return phone;
+        }
+
+        // Função para buscar por cidade similar
+        function searchSimilarCityPsicologia(city) {
+            document.getElementById('citySearchPsicologia').value = city;
+            searchPsicologia();
+        }
+
+        // Função para gerenciar checkboxes de filtro
+        function handleFilterChange() {
+            const filterAll = document.getElementById('filter-all-psico');
+            const otherFilters = document.querySelectorAll('input[type="checkbox"]:not(#filter-all-psico)');
+            
+            if (filterAll.checked) {
+                otherFilters.forEach(filter => {
+                    filter.checked = false;
+                });
+            } else {
+                const anyOtherChecked = Array.from(otherFilters).some(filter => filter.checked);
+                if (!anyOtherChecked) {
+                    filterAll.checked = true;
+                }
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.getElementById('searchBtnPsicologia');
+            const citySearch = document.getElementById('citySearchPsicologia');
+            const stateFilter = document.getElementById('stateFilterPsicologia');
+            const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            if (searchBtn) {
+                searchBtn.addEventListener('click', searchPsicologia);
+            }
+            
+            if (citySearch) {
+                citySearch.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchPsicologia();
+                    }
+                });
+            }
+            
+            if (stateFilter) {
+                stateFilter.addEventListener('change', function() {
+                    if (this.value && document.getElementById('citySearchPsicologia').value.trim()) {
+                        searchPsicologia();
+                    }
+                });
+            }
+            
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.id === 'filter-all-psico') {
+                        if (this.checked) {
+                            filterCheckboxes.forEach(cb => {
+                                if (cb.id !== 'filter-all-psico') cb.checked = false;
+                            });
+                        }
+                    } else {
+                        if (this.checked) {
+                            document.getElementById('filter-all-psico').checked = false;
+                        } else {
+                            const anyChecked = Array.from(filterCheckboxes).some(cb => 
+                                cb.id !== 'filter-all-psico' && cb.checked
+                            );
+                            if (!anyChecked) {
+                                document.getElementById('filter-all-psico').checked = true;
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .inspirational-women {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .woman-card {
+            background-color: #2e1a47;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid #9c27b0;
+        }
+        
+        .woman-card h4 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .woman-card p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .quotes-section {
+            margin: 1.5rem 0;
+        }
+        
+        .quotes-section blockquote {
+            background-color: #1a1a1a;
+            border-left: 4px solid #9c27b0;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            border-radius: 8px;
+        }
+        
+        .empowerment-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tip-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-card h4 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .tip-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .call-to-action {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .share-story-btn {
+            background-color: #9c27b0;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .share-story-btn:hover {
+            background-color: #7b1fa2;
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #8B5CF6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .psychology-result {
+            background-color: #2e1a47;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #8B5CF6;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .psychology-result h5 {
+            color: #8B5CF6;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .psychology-result p {
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+
+        .no-results {
+            background-color: #2e1a47;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed #8B5CF6;
+        }
+
+        .no-results h4 {
+            color: #8B5CF6;
+            margin-bottom: 1rem;
+        }
+
+        .no-results ul {
+            text-align: left;
+            max-width: 300px;
+            margin: 1rem auto;
+        }
+
+        .search-inputs {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .search-input, .search-select {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #8B5CF6;
+            border-radius: 8px;
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-input:focus, .search-select:focus {
+            outline: none;
+            border-color: #9c27b0;
+            box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.1);
+        }
+
+        .filter-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .filter-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #8B5CF6;
+        }
+
+        .location-btn {
+            background: linear-gradient(135deg, #8B5CF6 0%, #9c27b0 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .location-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .location-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .location-section {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #8B5CF6;
+        }
+        
+        @media (max-width: 768px) {
+            .inspirational-women {
+                grid-template-columns: 1fr;
+            }
+            
+            .empowerment-tips {
+                grid-template-columns: 1fr;
+            }
+            
+            .woman-card, .tip-card {
+                padding: 1rem;
+            }
+            
+            .quotes-section blockquote {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
+
+            .search-inputs {
+                flex-direction: column;
+            }
+            
+            .filter-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectar-se - Ecos de Liberdade</title>
+
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <script src="static/js/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <?php
+    session_start(); // Necessário no início de CADA PÁGINA .php que usa sessão
+
+    if (isset($_SESSION["message"])) {
+        $message = $_SESSION["message"];
+        $message_type = $_SESSION["message_type"] ?? "info"; // "success" ou "error"
+        // Adiciona classes CSS para estilização (alert e alert-success/alert-error)
+        echo "<div class=\"alert alert-" . htmlspecialchars($message_type) . "\">" . htmlspecialchars($message) . "</div>";
+        // Limpa a mensagem da sessão para não mostrar de novo
+        unset($_SESSION["message"]);
+        unset($_SESSION["message_type"]);
+    }
+    ?>
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn active-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Cadastre-se</h2>
+            <div class="content-box">
+                <div class="login-container">
+                    <form class="login-form" id="register-form" action="php/registrar.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" name="senha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmar Senha</label>
+                            <input type="password" id="confirm-password" name="confirmar_senha" required>
+                        </div>
+                        <div class="form-options">
+                            <div class="terms">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Cadastrar</button>
+                    </form>
+                    
+                    <div class="login-divider">
+                        <span>ou</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button class="social-btn facebook" onclick="window.location.href='em_construcao.html'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            <span>Cadastrar com Facebook</span>
+                        </button>
+                        <button class="social-btn google" onclick="window.location.href='em_construcao.html'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 12 h8"></path>
+                                <path d="M12 8 v8"></path>
+                            </svg>
+                            <span>Cadastrar com Google</span>
+                        </button>
+                    </div>
+                    
+                    <div class="register-link">
+                        <p>Já tem uma conta? <a href="entrar.html">Entrar</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="static/js/scripts.js"></script>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+
+</body>
+</html>

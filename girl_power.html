@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl Power - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link rel="stylesheet" href="static/css/alert.css">
+    <script src="static/js/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade Flutuante -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte" aria-label="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte" aria-label="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte" aria-label="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Girl Power: Empoderamento e Bem-estar</h2>
+            <div class="content-box">
+                <p>O empoderamento feminino vai além da força física - envolve saúde mental, autoestima e bem-estar emocional. Aqui você encontrará recursos para fortalecer sua mente, cuidar da sua saúde psicológica e encontrar apoio profissional quando necessário.</p>
+
+                <div class="info-section">
+                    <h3>A Importância da Saúde Mental</h3>
+                    <p>A saúde mental é um pilar fundamental para o bem-estar geral. Mulheres enfrentam pressões sociais, desafios emocionais e, muitas vezes, a sobrecarga de múltiplas funções. Buscar apoio psicológico é um ato de força e autocuidado.</p>
+                    <ul>
+                        <li><strong>Autoconhecimento</strong>: A terapia ajuda a entender emoções, padrões de pensamento e comportamentos.</li>
+                        <li><strong>Resiliência</strong>: Desenvolver a capacidade de lidar com adversidades e superar traumas.</li>
+                        <li><strong>Empoderamento</strong>: Fortalecer a autoestima e a confiança para tomar decisões e buscar seus objetivos.</li>
+                        <li><strong>Prevenção</strong>: Evitar o desenvolvimento de transtornos como ansiedade, depressão e estresse.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>🧠 Centros de Ajuda Psicológica</h3>
+                    <p>Encontre centros de apoio psicológico próximos à sua localização:</p>
+                    
+                    <div class="location-section">
+                        <div class="search-section">
+                            <h4>Buscar por localização:</h4>
+                            <div class="search-inputs">
+                                <input type="text" id="citySearchPsicologia" placeholder="Digite sua cidade (ex: São Paulo, Rio de Janeiro)" class="search-input">
+                                <select id="stateFilterPsicologia" class="search-select">
+                                    <option value="">Todos os estados</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Filtrar por tipo de atendimento:</h4>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-todos-tipos" checked>
+                                    <span>Todos os tipos</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-caps">
+                                    <span>CAPS (Centro de Atenção Psicossocial)</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-ubs">
+                                    <span>UBS (Unidade Básica de Saúde)</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-hospital">
+                                    <span>Hospital Psiquiátrico</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-ong">
+                                    <span>ONG/Instituição</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-clinica">
+                                    <span>Clínica Universitária</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button id="searchBtnPsicologia" class="location-btn">🔍 Buscar Centros de Ajuda Psicológica</button>
+                        <div id="searchResultsPsicologia" class="location-results"></div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>📞 Linhas de Apoio Emocional</h3>
+                    <p>Canais de apoio disponíveis 24 horas para momentos de crise:</p>
+                    <ul>
+                        <li><strong>188 - Centro de Valorização da Vida (CVV)</strong><br>
+                        Apoio emocional e prevenção do suicídio - 24h gratuito</li>
+                        <li><strong>180 - Central de Atendimento à Mulher</strong><br>
+                        Orientação e apoio psicológico para mulheres - 24h gratuito</li>
+                        <li><strong>141 - Disque Saúde</strong><br>
+                        Informações sobre saúde mental e encaminhamentos</li>
+                        <li><strong>100 - Disque Direitos Humanos</strong><br>
+                        Denúncias e orientações sobre violações de direitos</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>💪 Dicas para o Bem-estar Mental</h3>
+                    <ul>
+                        <li><strong>Pratique o Autocuidado</strong>: Reserve tempo para atividades que lhe dão prazer e relaxamento.</li>
+                        <li><strong>Mantenha Conexões Sociais</strong>: Cultive relacionamentos saudáveis e busque apoio quando necessário.</li>
+                        <li><strong>Exercite-se Regularmente</strong>: A atividade física libera endorfinas e melhora o humor.</li>
+                        <li><strong>Pratique Mindfulness</strong>: Técnicas de meditação e respiração ajudam a reduzir o estresse.</li>
+                        <li><strong>Estabeleça Limites</strong>: Aprenda a dizer "não" e proteger seu tempo e energia.</li>
+                        <li><strong>Busque Ajuda Profissional</strong>: Não hesite em procurar um psicólogo ou psiquiatra quando necessário.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>🌟 Sinais de que Você Pode Precisar de Ajuda</h3>
+                    <p>É importante reconhecer quando buscar apoio profissional:</p>
+                    <ul>
+                        <li>Sentimentos persistentes de tristeza, ansiedade ou vazio</li>
+                        <li>Perda de interesse em atividades que antes eram prazerosas</li>
+                        <li>Mudanças significativas no sono ou apetite</li>
+                        <li>Dificuldade de concentração ou tomada de decisões</li>
+                        <li>Sentimentos de culpa, inutilidade ou desesperança</li>
+                        <li>Pensamentos de autolesão ou suicídio</li>
+                        <li>Uso excessivo de álcool ou drogas</li>
+                        <li>Isolamento social prolongado</li>
+                    </ul>
+                    <p><strong>Lembre-se:</strong> Buscar ajuda é um sinal de força, não de fraqueza. Você merece cuidado e apoio.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Base de dados de Centros de Ajuda Psicológica
+        const psicologiaDatabase = [
+            // São Paulo
+            {
+                name: "CAPS III Adulto - Centro",
+                type: "CAPS",
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua Itapeva, 700 - Bela Vista",
+                phone: "(11) 3289-0300",
+                hours: "24 horas",
+                services: "Atendimento psicológico, Psiquiatria, Terapia em grupo, Oficinas terapêuticas",
+                specialty: "Atendimento a pessoas com transtornos mentais severos"
+            },
+            {
+                name: "UBS Vila Madalena",
+                type: "UBS",
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua Mourato Coelho, 1050 - Vila Madalena",
+                phone: "(11) 3097-0500",
+                hours: "Segunda a sexta: 7h às 17h",
+                services: "Atendimento psicológico, Consultas médicas, Grupos de apoio",
+                specialty: "Atenção básica em saúde mental"
+            },
+            {
+                name: "Instituto de Psiquiatria - HC FMUSP",
+                type: "Hospital",
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua Dr. Ovídio Pires de Campos, 785 - Cerqueira César",
+                phone: "(11) 2661-6976",
+                hours: "Segunda a sexta: 8h às 17h",
+                services: "Atendimento psiquiátrico especializado, Pesquisa, Residência médica",
+                specialty: "Transtornos psiquiátricos complexos"
+            },
+            {
+                name: "Centro de Atenção Psicossocial Mulher",
+                type: "CAPS",
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua Brigadeiro Galvão, 500 - Barra Funda",
+                phone: "(11) 3392-7000",
+                hours: "Segunda a sexta: 8h às 18h",
+                services: "Atendimento especializado para mulheres, Terapia individual e em grupo",
+                specialty: "Saúde mental da mulher"
+            },
+            {
+                name: "Clínica Psicológica PUC-SP",
+                type: "Clínica Universitária",
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua Monte Alegre, 984 - Perdizes",
+                phone: "(11) 3670-8000",
+                hours: "Segunda a sexta: 8h às 20h",
+                services: "Psicoterapia individual, Terapia familiar, Avaliação psicológica",
+                specialty: "Atendimento psicológico com valores sociais"
+            },
+            // Rio de Janeiro
+            {
+                name: "CAPS Eduardo Ribeiro",
+                type: "CAPS",
+                city: "Rio de Janeiro",
+                state: "RJ",
+                address: "Rua Voluntários da Pátria, 445 - Botafogo",
+                phone: "(21) 2295-2000",
+                hours: "Segunda a sexta: 8h às 17h",
+                services: "Atendimento psicossocial, Oficinas terapêuticas, Grupos de apoio",
+                specialty: "Transtornos mentais e dependência química"
+            },
+            {
+                name: "Instituto de Psiquiatria UFRJ",
+                type: "Hospital",
+                city: "Rio de Janeiro",
+                state: "RJ",
+                address: "Av. Venceslau Brás, 71 - Urca",
+                phone: "(21) 3938-5200",
+                hours: "Segunda a sexta: 8h às 17h",
+                services: "Atendimento psiquiátrico, Pesquisa, Ensino",
+                specialty: "Transtornos psiquiátricos e neurológicos"
+            },
+            {
+                name: "Centro de Valorização da Vida - RJ",
+                type: "ONG",
+                city: "Rio de Janeiro",
+                state: "RJ",
+                address: "Rua México, 90 - Centro",
+                phone: "(21) 2240-8080",
+                hours: "24 horas",
+                services: "Apoio emocional, Prevenção do suicídio, Grupos de apoio",
+                specialty: "Apoio emocional e prevenção do suicídio"
+            },
+            // Belo Horizonte
+            {
+                name: "CAPS Leste",
+                type: "CAPS",
+                city: "Belo Horizonte",
+                state: "MG",
+                address: "Rua Domingos Vieira, 300 - Santa Efigênia",
+                phone: "(31) 3277-8000",
+                hours: "Segunda a sexta: 7h às 19h",
+                services: "Atendimento psicossocial, Terapia ocupacional, Grupos terapêuticos",
+                specialty: "Saúde mental comunitária"
+            },
+            {
+                name: "Hospital Galba Velloso",
+                type: "Hospital",
+                city: "Belo Horizonte",
+                state: "MG",
+                address: "Rua Professor Otávio Coelho Magalhães, 4109 - Pampulha",
+                phone: "(31) 3429-9000",
+                hours: "24 horas",
+                services: "Internação psiquiátrica, Emergência psiquiátrica, Ambulatório",
+                specialty: "Psiquiatria e saúde mental"
+            },
+            // Porto Alegre
+            {
+                name: "CAPS Cais Mental Centro",
+                type: "CAPS",
+                city: "Porto Alegre",
+                state: "RS",
+                address: "Av. João Pessoa, 1015 - Centro",
+                phone: "(51) 3289-2400",
+                hours: "24 horas",
+                services: "Atendimento de urgência psiquiátrica, Acolhimento noturno",
+                specialty: "Emergências psiquiátricas"
+            },
+            {
+                name: "Instituto de Psicologia UFRGS",
+                type: "Clínica Universitária",
+                city: "Porto Alegre",
+                state: "RS",
+                address: "Rua Ramiro Barcelos, 2600 - Santana",
+                phone: "(51) 3308-5000",
+                hours: "Segunda a sexta: 8h às 18h",
+                services: "Psicoterapia, Avaliação psicológica, Grupos terapêuticos",
+                specialty: "Atendimento psicológico universitário"
+            },
+            // Curitiba
+            {
+                name: "CAPS Boa Vista",
+                type: "CAPS",
+                city: "Curitiba",
+                state: "PR",
+                address: "Rua Capitão Souza Franco, 695 - Boa Vista",
+                phone: "(41) 3350-9000",
+                hours: "Segunda a sexta: 7h às 19h",
+                services: "Atendimento psicossocial, Oficinas, Grupos de apoio",
+                specialty: "Saúde mental adulto"
+            },
+            // Salvador
+            {
+                name: "CAPS Professor Luís da Rocha Cerqueira",
+                type: "CAPS",
+                city: "Salvador",
+                state: "BA",
+                address: "Rua Conselheiro Pedro Luiz, 171 - Nazaré",
+                phone: "(71) 3116-8000",
+                hours: "Segunda a sexta: 8h às 17h",
+                services: "Atendimento psicossocial, Reabilitação psicossocial",
+                specialty: "Transtornos mentais severos"
+            },
+            // Brasília
+            {
+                name: "CAPS Asa Norte",
+                type: "CAPS",
+                city: "Brasília",
+                state: "DF",
+                address: "SGAN 905 - Asa Norte",
+                phone: "(61) 3348-7000",
+                hours: "Segunda a sexta: 8h às 18h",
+                services: "Atendimento psicossocial, Grupos terapêuticos, Oficinas",
+                specialty: "Saúde mental comunitária"
+            },
+            // Recife
+            {
+                name: "CAPS Profeta Gentileza",
+                type: "CAPS",
+                city: "Recife",
+                state: "PE",
+                address: "Rua Real da Torre, 299 - Madalena",
+                phone: "(81) 3355-8000",
+                hours: "Segunda a sexta: 8h às 17h",
+                services: "Atendimento psicossocial, Terapia ocupacional",
+                specialty: "Reabilitação psicossocial"
+            },
+            // Fortaleza
+            {
+                name: "CAPS Geral Dr. Frota Pinto",
+                type: "CAPS",
+                city: "Fortaleza",
+                state: "CE",
+                address: "Rua Frei Mansueto, 1350 - Messejana",
+                phone: "(85) 3101-2000",
+                hours: "Segunda a sexta: 8h às 17h",
+                services: "Atendimento psicossocial, Grupos de apoio, Oficinas",
+                specialty: "Saúde mental adulto"
+            }
+        ];
+
+        // Função para normalizar texto
+        function normalizeText(text) {
+            return text.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9\s]/g, "")
+                .trim();
+        }
+
+        // Função para obter filtros selecionados
+        function getSelectedFilters() {
+            const filterTodos = document.getElementById('filter-todos-tipos');
+            
+            if (filterTodos && filterTodos.checked) {
+                return ['all'];
+            }
+            
+            const filters = [];
+            const filterIds = ['caps', 'ubs', 'hospital', 'ong', 'clinica'];
+            
+            filterIds.forEach(filterId => {
+                const checkbox = document.getElementById(`filter-${filterId}`);
+                if (checkbox && checkbox.checked) {
+                    filters.push(filterId);
+                }
+            });
+            
+            return filters.length > 0 ? filters : ['all'];
+        }
+
+        // Função para verificar se o tipo corresponde aos filtros
+        function matchesTypeFilter(type, filters) {
+            if (filters.includes('all')) {
+                return true;
+            }
+            
+            const normalizedType = normalizeText(type);
+            
+            return filters.some(filter => {
+                switch (filter) {
+                    case 'caps':
+                        return normalizedType.includes('caps');
+                    case 'ubs':
+                        return normalizedType.includes('ubs');
+                    case 'hospital':
+                        return normalizedType.includes('hospital');
+                    case 'ong':
+                        return normalizedType.includes('ong');
+                    case 'clinica':
+                        return normalizedType.includes('clinica') || normalizedType.includes('universitaria');
+                    default:
+                        return false;
+                }
+            });
+        }
+
+        // Função para buscar centros de psicologia
+        function searchPsicologia() {
+            const citySearch = document.getElementById('citySearchPsicologia').value.trim();
+            const stateFilter = document.getElementById('stateFilterPsicologia').value;
+            const selectedFilters = getSelectedFilters();
+            const resultsDiv = document.getElementById('searchResultsPsicologia');
+            const searchBtn = document.getElementById('searchBtnPsicologia');
+            
+            searchBtn.innerHTML = '⏳ Buscando...';
+            searchBtn.disabled = true;
+            
+            setTimeout(() => {
+                let filtered = psicologiaDatabase.filter(centro => {
+                    // Filtro por estado
+                    if (stateFilter && centro.state !== stateFilter) return false;
+                    
+                    // Filtro por cidade
+                    if (citySearch) {
+                        const normalizedCity = normalizeText(citySearch);
+                        const normalizedCentroCity = normalizeText(centro.city);
+                        if (!normalizedCentroCity.includes(normalizedCity) && !normalizedCity.includes(normalizedCentroCity)) {
+                            return false;
+                        }
+                    }
+                    
+                    // Filtro por tipo
+                    if (!matchesTypeFilter(centro.type, selectedFilters)) {
+                        return false;
+                    }
+                    
+                    return true;
+                });
+                
+                displayPsicologiaResults(filtered, citySearch, stateFilter);
+                resetPsicologiaButton();
+            }, 500);
+        }
+
+        // Função para exibir resultados de centros de psicologia
+        function displayPsicologiaResults(centros, citySearch, stateFilter) {
+            const resultsDiv = document.getElementById('searchResultsPsicologia');
+            
+            if (centros.length === 0) {
+                let noResultsHTML = '<div class="no-results">';
+                noResultsHTML += '<h4>🔍 Nenhum centro encontrado</h4>';
+                noResultsHTML += '<p>Não encontramos centros de ajuda psicológica';
+                if (citySearch) noResultsHTML += ` em "${citySearch}"`;
+                if (stateFilter) noResultsHTML += ` no estado selecionado`;
+                noResultsHTML += '.</p>';
+                noResultsHTML += '<p><em>💡 Dica: Tente buscar por cidades maiores da sua região ou remova alguns filtros.</em></p>';
+                noResultsHTML += '</div>';
+                resultsDiv.innerHTML = noResultsHTML;
+                return;
+            }
+            
+            let resultsHTML = `<h4>🎯 Encontrados ${centros.length} centro(s)</h4>`;
+            
+            centros.forEach((centro, index) => {
+                resultsHTML += `<div class="academy-result">`;
+                resultsHTML += `<h5>🧠 ${centro.name}</h5>`;
+                resultsHTML += `<p><strong>🏥 Tipo:</strong> ${centro.type}</p>`;
+                resultsHTML += `<p><strong>📍 Localização:</strong> ${centro.city} - ${centro.state}</p>`;
+                resultsHTML += `<p><strong>🏠 Endereço:</strong> ${centro.address}</p>`;
+                resultsHTML += `<p><strong>📞 Telefone:</strong> <a href="tel:${centro.phone}" style="color: #8B5CF6; text-decoration: none;">${centro.phone}</a></p>`;
+                resultsHTML += `<p><strong>🕒 Horário:</strong> ${centro.hours}</p>`;
+                resultsHTML += `<p><strong>🛡️ Serviços:</strong> ${centro.services}</p>`;
+                if (centro.specialty) {
+                    resultsHTML += `<p><strong>⭐ Especialidade:</strong> ${centro.specialty}</p>`;
+                }
+                resultsHTML += '</div>';
+            });
+            
+            resultsDiv.innerHTML = resultsHTML;
+        }
+
+        // Função para resetar botão
+        function resetPsicologiaButton() {
+            const searchBtn = document.getElementById('searchBtnPsicologia');
+            searchBtn.innerHTML = '🔍 Buscar Centros de Ajuda Psicológica';
+            searchBtn.disabled = false;
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtnPsicologia = document.getElementById('searchBtnPsicologia');
+            const citySearchPsicologia = document.getElementById('citySearchPsicologia');
+            const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            if (searchBtnPsicologia) {
+                searchBtnPsicologia.addEventListener('click', searchPsicologia);
+            }
+            
+            if (citySearchPsicologia) {
+                citySearchPsicologia.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchPsicologia();
+                    }
+                });
+            }
+            
+            // Gerenciar checkboxes de filtro
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.id === 'filter-todos-tipos') {
+                        if (this.checked) {
+                            filterCheckboxes.forEach(cb => {
+                                if (cb.id !== 'filter-todos-tipos') cb.checked = false;
+                            });
+                        }
+                    } else {
+                        if (this.checked) {
+                            document.getElementById('filter-todos-tipos').checked = false;
+                        } else {
+                            const anyOtherChecked = Array.from(filterCheckboxes).some(cb => 
+                                cb.id !== 'filter-todos-tipos' && cb.checked
+                            );
+                            if (!anyOtherChecked) {
+                                document.getElementById('filter-todos-tipos').checked = true;
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartilhar Minha História - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .anonymous-toggle {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #444;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #9c27b0;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+        
+        .anonymous-label {
+            font-weight: 500;
+        }
+        
+        .anonymous-info {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .story-form textarea {
+            min-height: 200px;
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .privacy-note {
+            font-size: 0.9rem;
+            color: #888;
+            max-width: 70%;
+        }
+        
+        .submit-story {
+            background-color: #9c27b0;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-story:hover {
+            background-color: #7b1fa2;
+        }
+        
+        .success-message {
+            display: none;
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .historia-enviada-container {
+            display: none;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+            padding-top: 2rem;
+        }
+        
+        .historia-enviada-container h3 {
+            color: #9c27b0;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #9c27b0;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-info h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .testimonial-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .ver-todos-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #9c27b0;
+            border: 1px solid #9c27b0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        
+        .ver-todos-btn:hover {
+            background-color: rgba(156, 39, 176, 0.1);
+        }
+    </style>
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html" class="active">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+        
+               </div>
+    </header>
+    
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Compartilhar Minha História</h2>
+            
+            <div class="content-box">
+                <p class="intro-text">
+                    Compartilhar sua história pode ser um passo importante no processo de cura e também pode ajudar outras mulheres que estão passando por situações semelhantes. Seu relato pode inspirar coragem e mostrar que não estamos sozinhas nessa luta.
+                </p>
+                
+                <div class="success-message" id="success-message">
+                    Sua história foi enviada com sucesso! Você pode visualizá-la abaixo.
+                </div>
+                
+                <form class="story-form" id="story-form">
+                    <div class="form-group">
+                        <label for="story-title">Título da sua história (opcional)</label>
+                        <input type="text" id="story-title" placeholder="Um título para sua história">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="story-content">Sua história</label>
+                        <textarea id="story-content" placeholder="Compartilhe sua experiência aqui..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="story-author">Seu nome (opcional)</label>
+                        <input type="text" id="story-author" placeholder="Como você gostaria de ser identificada">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="story-location">Sua cidade/estado</label>
+                        <input type="text" id="story-location" placeholder="Ex: São Paulo, Rio de Janeiro, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="story-age">Sua idade (opcional)</label>
+                        <input type="number" id="story-age" placeholder="Sua idade">
+                    </div>
+                    
+                    <div class="anonymous-toggle">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="anonymous-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <div>
+                            <div class="anonymous-label">Enviar anonimamente</div>
+                            <div class="anonymous-info">Seu nome e informações pessoais não serão exibidos publicamente</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <div class="privacy-note">
+                            Sua privacidade é nossa prioridade. Todas as histórias passam por moderação antes de serem publicadas.
+                        </div>
+                        <button type="submit" class="submit-story" onclick="window.location.href='em_construcao.html?origem=compartilhar_historia'">Enviar História</button>
+                    </div>
+                </form>
+                
+                <!-- Container para exibir a história enviada -->
+                <div class="historia-enviada-container" id="historia-enviada-container">
+                    <h3>Sua História Enviada</h3>
+                    <div class="testimonial-card" id="historia-enviada-card">
+                        <!-- O conteúdo será preenchido dinamicamente pelo JavaScript -->
+                    </div>
+                    <p>Sua história foi enviada com sucesso e já está disponível para inspirar outras mulheres.</p>
+                    <a href="relatos.html" class="ver-todos-btn">Ver Todas as Histórias</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+    
+    <script src="static/js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar estado de login
+            if (typeof checkLoginState === 'function') {
+                checkLoginState();
+            }
+            
+            // Manipular envio do formulário
+            const storyForm = document.getElementById('story-form');
+            const successMessage = document.getElementById('success-message');
+            const historiaEnviadaContainer = document.getElementById('historia-enviada-container');
+            const historiaEnviadaCard = document.getElementById('historia-enviada-card');
+            
+            storyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const titulo = document.getElementById('story-title').value;
+                const conteudo = document.getElementById('story-content').value;
+                const autor = document.getElementById('story-author').value;
+                const local = document.getElementById('story-location').value;
+                const idade = document.getElementById('story-age').value;
+                const isAnonimo = document.getElementById('anonymous-toggle').checked;
+                
+                // Validação básica
+                if (!conteudo.trim()) {
+                    alert('Por favor, compartilhe sua história antes de enviar.');
+                    return;
+                }
+                
+                if (!local.trim()) {
+                    alert('Por favor, informe sua cidade/estado.');
+                    return;
+                }
+                
+                // Mostrar mensagem de sucesso
+                successMessage.style.display = 'block';
+                
+                // Criar HTML para exibir a história enviada
+                let headerHTML = '<div class="testimonial-header"><div class="testimonial-avatar"></div><div class="testimonial-info">';
+                
+                if (isAnonimo) {
+                    headerHTML += '<h3>Anônima</h3><p>' + local + '</p>';
+                } else {
+                    const nomeExibir = autor.trim() ? autor : 'Usuária';
+                    headerHTML += '<h3>' + nomeExibir + '</h3>';
+                    if (idade) {
+                        headerHTML += '<p>' + idade + ' anos, ' + local + '</p>';
+                    } else {
+                        headerHTML += '<p>' + local + '</p>';
+                    }
+                }
+                
+                headerHTML += '</div></div>';
+                
+                const textoHTML = '<p class="testimonial-text">"' + conteudo + '"</p>';
+                
+                // Inserir HTML no card
+                historiaEnviadaCard.innerHTML = headerHTML + textoHTML;
+                
+                // Mostrar o container da história enviada
+                historiaEnviadaContainer.style.display = 'block';
+                
+                // Limpar formulário
+                storyForm.reset();
+                
+                // Rolar para a história enviada
+                setTimeout(function() {
+                    historiaEnviadaContainer.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+                
+                // Tentar salvar no localStorage para uso futuro (mesmo que não seja usado na navegação)
+                try {
+                    // Criar objeto da história
+                    const historia = {
+                        id: new Date().getTime(),
+                        titulo: titulo || "Sem título",
+                        conteudo: conteudo,
+                        autor: isAnonimo ? "Anônima" : (autor || "Usuária"),
+                        local: local,
+                        idade: idade ? parseInt(idade) : null,
+                        anonimo: isAnonimo,
+                        data: new Date().toISOString().split('T')[0]
+                    };
+                    
+                    // Tentar salvar no localStorage
+                    const historiasAnteriores = localStorage.getItem('ecos_historias');
+                    let historias = [];
+                    
+                    if (historiasAnteriores) {
+                        historias = JSON.parse(historiasAnteriores);
+                    }
+                    
+                    historias.push(historia);
+                    localStorage.setItem('ecos_historias', JSON.stringify(historias));
+                } catch (e) {
+                    console.log('Não foi possível salvar no localStorage:', e);
+                }
+            });
+        });
+
+        const form = document.getElementById('story-form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const dados = new FormData(form);
+
+    fetch('php/salvar_relato.php', {
+        method: 'POST',
+        body: dados
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+        form.reset();
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+});
+
+    </script>
+   
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>

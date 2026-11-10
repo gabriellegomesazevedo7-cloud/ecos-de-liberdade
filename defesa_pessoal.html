@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defesa Pessoal - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link rel="stylesheet" href="static/css/alert.css">
+    <script src="static/js/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade Flutuante -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte" aria-label="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte" aria-label="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte" aria-label="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Defesa Pessoal: Aprenda Técnicas</h2>
+            <div class="content-box">
+                <p>A defesa pessoal é uma habilidade fundamental para a segurança e o empoderamento das mulheres. Aprender técnicas de autodefesa pode aumentar a confiança, a consciência situacional e fornecer ferramentas práticas para situações de risco. Aqui você encontrará informações sobre técnicas básicas e locais próximos onde pode aprender mais.</p>
+
+                <div class="info-section">
+                    <h3>Técnicas Básicas de Defesa Pessoal</h3>
+                    <p>Algumas técnicas fundamentais que toda mulher deveria conhecer:</p>
+                    <ul>
+                        <li><strong>Postura e Consciência Situacional</strong>: Mantenha-se alerta ao ambiente, evite distrações como celular em locais desconhecidos, e confie nos seus instintos.</li>
+                        <li><strong>Técnicas de Escape</strong>: Aprenda a se libertar de agarrões nos pulsos, braços e pescoço usando movimentos rápidos e direcionados.</li>
+                        <li><strong>Pontos de Pressão</strong>: Conheça os pontos vulneráveis do corpo humano (olhos, nariz, joelhos, pés) para usar em situações de emergência.</li>
+                        <li><strong>Uso da Voz</strong>: Gritar alto pode assustar o agressor e chamar a atenção de outras pessoas. Pratique gritos firmes e direcionados.</li>
+                        <li><strong>Objetos do Cotidiano</strong>: Chaves, canetas, guarda-chuvas e outros objetos podem ser usados como ferramentas de defesa.</li>
+                        <li><strong>Técnicas de Chutes e Socos</strong>: Aprenda movimentos básicos que podem ser eficazes mesmo sem muita força física.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Modalidades de Defesa Pessoal</h3>
+                    <p>Existem diversas modalidades que podem ajudar no desenvolvimento de habilidades de autodefesa:</p>
+                    <ul>
+                        <li><strong>Krav Maga</strong>: Sistema de combate desenvolvido para situações reais, focado em neutralizar ameaças rapidamente.</li>
+                        <li><strong>Jiu-Jitsu</strong>: Arte marcial que ensina técnicas de solo e submissão, muito eficaz para defesa pessoal.</li>
+                        <li><strong>Muay Thai</strong>: Arte marcial tailandesa que desenvolve técnicas de chutes, socos, joelhadas e cotoveladas.</li>
+                        <li><strong>Boxe</strong>: Desenvolve técnicas de socos, esquivas e movimentação.</li>
+                        <li><strong>Aikido</strong>: Arte marcial que usa a força do oponente contra ele mesmo.</li>
+                        <li><strong>Cursos Específicos de Defesa Pessoal Feminina</strong>: Programas desenvolvidos especificamente para mulheres, focando em situações comuns de risco.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Encontre Locais Próximos</h3>
+                    <p>Busque academias e centros de treinamento de defesa pessoal na sua região:</p>
+                    
+                    <div class="location-section">
+                        <div class="search-section">
+                            <h4>Buscar por localização:</h4>
+                            <div class="search-inputs">
+                                <input type="text" id="citySearch" placeholder="Digite sua cidade (ex: São Paulo, Rio de Janeiro)" class="search-input">
+                                <select id="stateFilter" class="search-select">
+                                    <option value="">Todos os estados</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h4>Filtrar por modalidade:</h4>
+                            <div class="filter-options">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-all" checked>
+                                    <span>Todas as modalidades</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-krav-maga">
+                                    <span>Krav Maga</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-jiu-jitsu">
+                                    <span>Jiu-Jitsu</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-muay-thai">
+                                    <span>Muay Thai</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-boxe">
+                                    <span>Boxe</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-mma">
+                                    <span>MMA</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-karate">
+                                    <span>Karatê</span>
+                                </label>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" id="filter-taekwondo">
+                                    <span>Taekwondo</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button id="searchBtn" class="location-btn">🔍 Buscar Academias</button>
+                        <div id="searchResults" class="location-results"></div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Dicas Importantes</h3>
+                    <ul>
+                        <li><strong>Pratique Regularmente</strong>: A defesa pessoal requer prática constante para que os movimentos se tornem automáticos.</li>
+                        <li><strong>Condicionamento Físico</strong>: Mantenha-se em boa forma física para ter mais resistência e agilidade.</li>
+                        <li><strong>Confiança</strong>: A postura confiante pode desencorajar potenciais agressores.</li>
+                        <li><strong>Prevenção</strong>: A melhor defesa é evitar situações de risco sempre que possível.</li>
+                        <li><strong>Busque Instrução Profissional</strong>: Aprenda com instrutores qualificados para garantir que as técnicas sejam executadas corretamente.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Base de dados simplificada e funcional de academias
+        const academiesDatabase = [
+            // São Paulo
+            {
+                name: "Academia de Defesa Pessoal Feminina SP",
+                modalities: ["Krav Maga", "Defesa Pessoal Feminina"],
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua Augusta, 1500 - Consolação",
+                phone: "(11) 98765-4321",
+                specialty: "Cursos focados em autodefesa para mulheres, com simulações realistas.",
+                instructor: "Ana Silva"
+            },
+            {
+                name: "Centro de Lutas Gracie Barra - SP",
+                modalities: ["Jiu-Jitsu", "Boxe", "Muay Thai"],
+                city: "São Paulo",
+                state: "SP",
+                address: "Av. Paulista, 2000 - Bela Vista",
+                phone: "(11) 91234-5678",
+                specialty: "Tradição em Jiu-Jitsu com aulas para todos os níveis.",
+                instructor: "Carlos Gracie Jr."
+            },
+            {
+                name: "Krav Maga São Paulo Centro",
+                modalities: ["Krav Maga"],
+                city: "São Paulo",
+                state: "SP",
+                address: "Rua da Consolação, 800 - Centro",
+                phone: "(11) 95555-1234",
+                specialty: "Sistema de combate israelense para situações reais.",
+                instructor: "David Cohen"
+            },
+            // Rio de Janeiro
+            {
+                name: "Academia Feminina Rio",
+                modalities: ["Defesa Pessoal Feminina", "Boxe"],
+                city: "Rio de Janeiro",
+                state: "RJ",
+                address: "Av. Copacabana, 1200 - Copacabana",
+                phone: "(21) 98888-7777",
+                specialty: "Especializada em defesa pessoal para mulheres.",
+                instructor: "Maria Santos"
+            },
+            {
+                name: "Gracie Humaitá",
+                modalities: ["Jiu-Jitsu", "MMA"],
+                city: "Rio de Janeiro",
+                state: "RJ",
+                address: "Rua Marquês de São Vicente, 225 - Gávea",
+                phone: "(21) 97777-8888",
+                specialty: "Berço do Jiu-Jitsu brasileiro.",
+                instructor: "Royler Gracie"
+            },
+            // Belo Horizonte
+            {
+                name: "Centro de Artes Marciais BH",
+                modalities: ["Karatê", "Taekwondo", "Muay Thai"],
+                city: "Belo Horizonte",
+                state: "MG",
+                address: "Av. Afonso Pena, 3000 - Centro",
+                phone: "(31) 99999-0000",
+                specialty: "Artes marciais tradicionais e modernas.",
+                instructor: "João Oliveira"
+            },
+            {
+                name: "Krav Maga Minas",
+                modalities: ["Krav Maga", "Defesa Pessoal Feminina"],
+                city: "Belo Horizonte",
+                state: "MG",
+                address: "Rua da Bahia, 1500 - Centro",
+                phone: "(31) 98888-1111",
+                specialty: "Defesa pessoal prática e eficiente.",
+                instructor: "Rafael Mendes"
+            },
+            // Porto Alegre
+            {
+                name: "Academia Gaúcha de Lutas",
+                modalities: ["Jiu-Jitsu", "Boxe", "MMA"],
+                city: "Porto Alegre",
+                state: "RS",
+                address: "Av. Borges de Medeiros, 1000 - Centro",
+                phone: "(51) 97777-2222",
+                specialty: "Formação completa em artes marciais.",
+                instructor: "Pedro Rizzo"
+            },
+            // Curitiba
+            {
+                name: "Centro de Defesa Pessoal Curitiba",
+                modalities: ["Krav Maga", "Defesa Pessoal Feminina", "Boxe"],
+                city: "Curitiba",
+                state: "PR",
+                address: "Rua XV de Novembro, 800 - Centro",
+                phone: "(41) 96666-3333",
+                specialty: "Técnicas de autodefesa urbana.",
+                instructor: "Luciana Costa"
+            },
+            // Salvador
+            {
+                name: "Academia Bahiana de Lutas",
+                modalities: ["Muay Thai", "Boxe", "MMA"],
+                city: "Salvador",
+                state: "BA",
+                address: "Av. Sete de Setembro, 2000 - Barra",
+                phone: "(71) 95555-4444",
+                specialty: "Lutas e condicionamento físico.",
+                instructor: "Antônio Silva"
+            },
+            // Brasília
+            {
+                name: "Centro de Artes Marciais DF",
+                modalities: ["Jiu-Jitsu", "Karatê", "Taekwondo"],
+                city: "Brasília",
+                state: "DF",
+                address: "SCS Quadra 02, Bloco C - Asa Sul",
+                phone: "(61) 94444-5555",
+                specialty: "Tradição em artes marciais orientais.",
+                instructor: "Marcos Yamamoto"
+            },
+            // Recife
+            {
+                name: "Academia Pernambucana de Defesa",
+                modalities: ["Krav Maga", "Muay Thai", "Defesa Pessoal Feminina"],
+                city: "Recife",
+                state: "PE",
+                address: "Av. Boa Viagem, 3000 - Boa Viagem",
+                phone: "(81) 93333-6666",
+                specialty: "Defesa pessoal adaptada ao clima tropical.",
+                instructor: "Fernanda Lima"
+            },
+            // Fortaleza
+            {
+                name: "Centro de Lutas do Ceará",
+                modalities: ["Jiu-Jitsu", "Boxe", "MMA"],
+                city: "Fortaleza",
+                state: "CE",
+                address: "Av. Beira Mar, 1500 - Meireles",
+                phone: "(85) 92222-7777",
+                specialty: "Formação de atletas e defesa pessoal.",
+                instructor: "José Aldo"
+            }
+        ];
+
+        // Função para normalizar texto
+        function normalizeText(text) {
+            return text.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9\s]/g, "")
+                .trim();
+        }
+
+        // Função principal de busca
+        function searchAcademies() {
+            const citySearch = document.getElementById('citySearch').value.trim();
+            const stateFilter = document.getElementById('stateFilter').value;
+            const selectedFilters = getSelectedFilters();
+            const resultsDiv = document.getElementById('searchResults');
+            const searchBtn = document.getElementById('searchBtn');
+            
+            // Mostrar loading
+            searchBtn.innerHTML = '⏳ Buscando...';
+            searchBtn.disabled = true;
+            
+            setTimeout(() => {
+                let filteredAcademies = academiesDatabase.filter(academy => {
+                    // Filtro por estado
+                    if (stateFilter && academy.state !== stateFilter) {
+                        return false;
+                    }
+                    
+                    // Filtro por cidade
+                    if (citySearch) {
+                        const normalizedCity = normalizeText(citySearch);
+                        const normalizedAcademyCity = normalizeText(academy.city);
+                        if (!normalizedAcademyCity.includes(normalizedCity) && !normalizedCity.includes(normalizedAcademyCity)) {
+                            return false;
+                        }
+                    }
+                    
+                    // Filtro por modalidade
+                    if (!selectedFilters.includes('all')) {
+                        const hasModalityMatch = selectedFilters.some(filter => {
+                            return academy.modalities.some(modality => {
+                                const normalizedModality = normalizeText(modality);
+                                const normalizedFilter = normalizeText(filter);
+                                return normalizedModality.includes(normalizedFilter) || normalizedFilter.includes(normalizedModality);
+                            });
+                        });
+                        if (!hasModalityMatch) {
+                            return false;
+                        }
+                    }
+                    
+                    return true;
+                });
+                
+                displayResults(filteredAcademies, citySearch, stateFilter);
+                resetSearchButton();
+            }, 500);
+        }
+
+        // Função para exibir resultados
+        function displayResults(academies, citySearch, stateFilter) {
+            const resultsDiv = document.getElementById('searchResults');
+            
+            if (academies.length === 0) {
+                let noResultsHTML = '<div class="no-results">';
+                noResultsHTML += '<h4>🔍 Nenhuma academia encontrada</h4>';
+                noResultsHTML += '<p>Não encontramos academias';
+                if (citySearch) noResultsHTML += ` em "${citySearch}"`;
+                if (stateFilter) noResultsHTML += ` no estado selecionado`;
+                noResultsHTML += '.</p>';
+                noResultsHTML += '<p><em>💡 Dica: Tente buscar por cidades maiores da sua região ou remova alguns filtros.</em></p>';
+                noResultsHTML += '</div>';
+                resultsDiv.innerHTML = noResultsHTML;
+                return;
+            }
+            
+            let resultsHTML = `<h4>🎯 Encontradas ${academies.length} academia(s)</h4>`;
+            
+            academies.forEach((academy, index) => {
+                resultsHTML += `<div class="academy-result">`;
+                resultsHTML += `<h5>🥋 ${academy.name}</h5>`;
+                resultsHTML += `<p><strong>🎭 Modalidades:</strong> ${academy.modalities.join(", ")}</p>`;
+                resultsHTML += `<p><strong>📍 Localização:</strong> ${academy.city} - ${academy.state}</p>`;
+                
+                if (academy.address) {
+                    resultsHTML += `<p><strong>🏠 Endereço:</strong> ${academy.address}</p>`;
+                }
+                
+                if (academy.phone) {
+                    resultsHTML += `<p><strong>📞 Telefone:</strong> <a href="tel:${academy.phone}" style="color: #8B5CF6; text-decoration: none;">${academy.phone}</a></p>`;
+                }
+                
+                if (academy.specialty) {
+                    resultsHTML += `<p><strong>⭐ Especialidade:</strong> ${academy.specialty}</p>`;
+                }
+                
+                if (academy.instructor) {
+                    resultsHTML += `<p><strong>👨‍🏫 Instrutor:</strong> ${academy.instructor}</p>`;
+                }
+                
+                resultsHTML += '</div>';
+            });
+            
+            resultsDiv.innerHTML = resultsHTML;
+        }
+
+        // Função para obter filtros selecionados
+        function getSelectedFilters() {
+            const filterAll = document.getElementById('filter-all');
+            
+            if (filterAll && filterAll.checked) {
+                return ['all'];
+            }
+            
+            const filters = [];
+            const filterIds = ['krav-maga', 'jiu-jitsu', 'muay-thai', 'boxe', 'mma', 'karate', 'taekwondo'];
+            
+            filterIds.forEach(filterId => {
+                const checkbox = document.getElementById(`filter-${filterId}`);
+                if (checkbox && checkbox.checked) {
+                    filters.push(filterId.replace('-', ' '));
+                }
+            });
+            
+            return filters.length > 0 ? filters : ['all'];
+        }
+
+        // Função para resetar o botão de busca
+        function resetSearchButton() {
+            const searchBtn = document.getElementById('searchBtn');
+            searchBtn.innerHTML = '🔍 Buscar Academias';
+            searchBtn.disabled = false;
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.getElementById('searchBtn');
+            const citySearch = document.getElementById('citySearch');
+            const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            if (searchBtn) {
+                searchBtn.addEventListener('click', searchAcademies);
+            }
+            
+            if (citySearch) {
+                citySearch.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchAcademies();
+                    }
+                });
+            }
+            
+            // Gerenciar checkboxes de filtro
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.id === 'filter-all') {
+                        if (this.checked) {
+                            filterCheckboxes.forEach(cb => {
+                                if (cb.id !== 'filter-all') cb.checked = false;
+                            });
+                        }
+                    } else {
+                        if (this.checked) {
+                            document.getElementById('filter-all').checked = false;
+                        } else {
+                            const anyOtherChecked = Array.from(filterCheckboxes).some(cb => 
+                                cb.id !== 'filter-all' && cb.checked
+                            );
+                            if (!anyOtherChecked) {
+                                document.getElementById('filter-all').checked = true;
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doações - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css"> 
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html" class="active">Doações</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Doações</h2>
+            <div class="content-box">
+                <p>Sua contribuição é fundamental para mantermos nossos projetos e ajudarmos mais mulheres. Existem diversas formas de apoiar nossa causa:</p>
+                
+                <div class="donation-options">
+                    <div class="donation-card">
+                        <div class="donation-icon">💰</div>
+                        <h3>Doação Financeira</h3>
+                        <p>Contribua com qualquer valor para ajudar a manter nossos serviços de apoio e acolhimento.</p>
+                        <button class="donate-btn" onclick="window.location.href='em_construcao.html?origem=doacoes'">Doar Agora</button>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-icon">👕</div>
+                        <h3>Doação de Itens</h3>
+                        <p>Roupas, alimentos não perecíveis e produtos de higiene são sempre bem-vindos.</p>
+                        <button class="donate-btn" onclick="window.location.href='em_construcao.html?origem=doacoes'">Saiba Mais</button>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-icon">⏱️</div>
+                        <h3>Voluntariado</h3>
+                        <p>Doe seu tempo e habilidades para ajudar mulheres em situação de vulnerabilidade.</p>
+                        <button class="donate-btn" onclick="window.location.href='em_construcao.html?origem=doacoes'">Seja Voluntário</button>
+                    </div>
+                </div>
+                
+                <div class="bank-info">
+                    <h3>Dados Bancários</h3>
+                    <p>Banco: 001 - Banco do Brasil</p>
+                    <p>Agência: 1234-5</p>
+                    <p>Conta Corrente: 67890-1</p>
+                    <p>CNPJ: 12.345.678/0001-90</p>
+                    <p>Titular: Instituto Ecos de Liberdade</p>
+                </div>
+                
+                <div class="ongs-section">
+                    <h3>Conheça Nossas Parceiras - ONGs que Apoiam Mulheres</h3>
+                    <p>Além de apoiar o Ecos de Liberdade, você pode conhecer e contribuir com outras organizações que trabalham pelo empoderamento e proteção de mulheres:</p>
+                    
+                    <div class="ongs-grid">
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Instituto Maria da Penha</h4>
+                                <span class="ong-badge">Violência Doméstica</span>
+                            </div>
+                            <p class="ong-description">Trabalha no enfrentamento à violência doméstica e familiar contra a mulher através de ações educativas, jurídicas e de apoio psicológico.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Combate à violência doméstica</p>
+                                <p><strong>Atuação:</strong> Nacional</p>
+                            </div>
+                            <a href="https://www.institutomariadapenha.org.br/" target="_blank" class="ong-link-btn">Doar / Saiba Mais</a>
+                        </div>
+                        
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Mapa do Acolhimento</h4>
+                                <span class="ong-badge">Atendimento Jurídico</span>
+                            </div>
+                            <p class="ong-description">Oferece atendimento psicológico e jurídico gratuito para mulheres que sofreram violência, conectando profissionais voluntários com quem precisa de ajuda.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Apoio psicológico e jurídico</p>
+                                <p><strong>Atuação:</strong> Nacional</p>
+                            </div>
+                            <a href="https://www.mapadoacolhimento.org/atendimento/" target="_blank" class="ong-link-btn">Peça Ajuda / Saiba Mais</a>
+                        </div>
+                        
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Associação Fala Mulher</h4>
+                                <span class="ong-badge">Acolhimento</span>
+                            </div>
+                            <p class="ong-description">Organização sem fins lucrativos que atua no combate à violência doméstica contra a mulher, oferecendo acolhimento institucional sigiloso e apoio integral.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Acolhimento e proteção</p>
+                                <p><strong>Atuação:</strong> São Paulo</p>
+                            </div>
+                            <a href="https://doe.falamulher.ong.br/" target="_blank" class="ong-link-btn">Doar / Saiba Mais</a>
+                        </div>
+                        
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Justiceiras</h4>
+                                <span class="ong-badge">Força-Tarefa</span>
+                            </div>
+                            <p class="ong-description">Projeto idealizado para combater o aumento dos casos de violência doméstica, oferecendo suporte multidisciplinar e voluntariado para mulheres em situação de risco.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Combate à violência doméstica</p>
+                                <p><strong>Atuação:</strong> Nacional</p>
+                            </div>
+                            <a href="https://www.justiceiras.org.br/" target="_blank" class="ong-link-btn">Peça Ajuda / Saiba Mais</a>
+                        </div>
+                        
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Tamo Juntas</h4>
+                                <span class="ong-badge">Assistência Multidisciplinar</span>
+                            </div>
+                            <p class="ong-description">Organização feminista composta por mulheres profissionais que atuam voluntariamente na assistência multidisciplinar a mulheres em situação de vulnerabilidade.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Assistência integral</p>
+                                <p><strong>Atuação:</strong> Nacional</p>
+                            </div>
+                            <a href="https://tamojuntas.org.br/doacao/" target="_blank" class="ong-link-btn">Doar / Saiba Mais</a>
+                        </div>
+                        
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Instituto Nós Por Elas</h4>
+                                <span class="ong-badge">Empoderamento</span>
+                            </div>
+                            <p class="ong-description">Trabalha para criar oportunidades e reduzir injustiças de gênero, promovendo o empoderamento econômico e social de mulheres em todo o país.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Empoderamento feminino</p>
+                                <p><strong>Atuação:</strong> Nacional</p>
+                            </div>
+                            <a href="https://nosporelas.com/como-doar/" target="_blank" class="ong-link-btn">Doar / Saiba Mais</a>
+                        </div>
+                        
+                        <div class="ong-card">
+                            <div class="ong-header">
+                                <h4>Mulheres de Mauá</h4>
+                                <span class="ong-badge">Ação Local</span>
+                            </div>
+                            <p class="ong-description">A Ong Mulheres em Ação de Mauá atua no enfrentamento à violência contra a mulher, promovendo a equidade e a representatividade feminina no mercado de trabalho.</p>
+                            <div class="ong-contact">
+                                <p><strong>Foco:</strong> Combate à violência e equidade</p>
+                                <p><strong>Atuação:</strong> Mauá/SP</p>
+                            </div>
+                            <a href="https://www.facebook.com/ongmulheresemacaodemaua/" target="_blank" class="ong-link-btn">Saiba Mais / Contato</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="donation-impact">
+                    <h3>O Impacto da Sua Doação</h3>
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <h4>R$ 50</h4>
+                            <p>Fornece kit de higiene para uma mulher em situação de vulnerabilidade</p>
+                        </div>
+                        <div class="impact-item">
+                            <h4>R$ 100</h4>
+                            <p>Garante uma sessão de apoio psicológico</p>
+                        </div>
+                        <div class="impact-item">
+                            <h4>R$ 200</h4>
+                            <p>Custeia uma oficina de capacitação profissional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="static/js/scripts.js"></script>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>

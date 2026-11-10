@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não se Cale - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link rel="stylesheet" href="static/css/alert.css">
+    <script src="static/js/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Não se Cale: Denuncie e Busque Ajuda</h2>
+            <div class="content-box">
+                <p>A violência contra a mulher é um problema grave que afeta milhões de vidas. É fundamental que as vítimas saibam que não estão sozinhas e que existem diversos canais de denúncia e redes de apoio disponíveis. Denunciar é o primeiro passo para romper o ciclo da violência e buscar uma vida de liberdade e segurança.</p>
+
+                <div class="info-section">
+                    <h3>Canais de Denúncia</h3>
+                    <p>Em caso de violência, não hesite em buscar ajuda. Existem diversos canais oficiais e seguros para realizar denúncias, garantindo o anonimato e o suporte necessário:</p>
+                    <ul>
+                        <li><strong>Ligue 180 (Central de Atendimento à Mulher)</strong>: Serviço gratuito e confidencial que oferece acolhimento, informações e encaminhamento para serviços da rede de atendimento à mulher em situação de violência. Funciona 24 horas por dia, todos os dias da semana.</li>
+                        <li><strong>Ligue 100 (Disque Direitos Humanos)</strong>: Recebe denúncias de violações de direitos humanos, incluindo violência contra a mulher. Também funciona 24 horas por dia.</li>
+                        <li><strong>Polícia Militar (190)</strong>: Para casos de emergência e flagrante de violência.</li>
+                        <li><strong>Polícia Civil (197)</strong>: Para registrar boletins de ocorrência em delegacias comuns ou especializadas (Delegacias da Mulher - DEAMs).</li>
+                        <li><strong>Delegacias da Mulher (DEAMs)</strong>: Unidades especializadas no atendimento a mulheres vítimas de violência, com equipes preparadas para acolher e investigar os casos.</li>
+                        <li><strong>Ministério Público</strong>: Pode ser acionado para denúncias e acompanhamento de casos de violência.</li>
+                        <li><strong>Aplicativos e Plataformas Online</strong>: Alguns estados e municípios oferecem aplicativos e plataformas para denúncias online. Verifique a disponibilidade em sua região.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Encontre Delegacias da Mulher Próximas</h3>
+                    <p>Localize delegacias especializadas no atendimento à mulher em sua região:</p>
+                    
+                    <div class="location-section">
+                        <div class="search-section">
+                            <h4>Buscar por localização:</h4>
+                            <div class="search-inputs">
+                                <input type="text" id="citySearchDelegacia" placeholder="Digite sua cidade (ex: São Paulo, Rio de Janeiro)" class="search-input">
+                                <select id="stateFilterDelegacia" class="search-select">
+                                    <option value="">Todos os estados</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button id="searchBtnDelegacia" class="location-btn">🏛️ Buscar Delegacias da Mulher</button>
+                        <div id="searchResultsDelegacia" class="location-results"></div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Atendimento Jurídico Gratuito</h3>
+                    <p>Encontre serviços de assistência jurídica gratuita para mulheres vítimas de violência:</p>
+                    
+                    <div class="location-section">
+                        <div class="search-section">
+                            <h4>Buscar por localização:</h4>
+                            <div class="search-inputs">
+                                <input type="text" id="citySearchJuridico" placeholder="Digite sua cidade (ex: São Paulo, Rio de Janeiro)" class="search-input">
+                                <select id="stateFilterJuridico" class="search-select">
+                                    <option value="">Todos os estados</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button id="searchBtnJuridico" class="location-btn">⚖️ Buscar Atendimento Jurídico</button>
+                        <div id="searchResultsJuridico" class="location-results"></div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Recursos de Apoio e Acolhimento</h3>
+                    <p>Além dos canais de denúncia, diversas instituições oferecem apoio psicológico, jurídico e social para mulheres em situação de violência:</p>
+                    <ul>
+                        <li><strong>Centros de Referência de Atendimento à Mulher (CRAMs)</strong>: Oferecem acolhimento, acompanhamento psicossocial e orientação jurídica.</li>
+                        <li><strong>Casas Abrigo</strong>: Locais seguros e sigilosos para mulheres e seus filhos que precisam se afastar do agressor.</li>
+                        <li><strong>Organizações Não Governamentais (ONGs)</strong>: Muitas ONGs oferecem serviços especializados, como a <strong>Justiceiras</strong> (<a href="https://www.justiceiras.org.br/" target="_blank">www.justiceiras.org.br</a>), que oferece orientação jurídica, psicológica, socioassistencial e médica, além de uma rede de apoio gratuita e acolhimento online.</li>
+                        <li><strong>Defensorias Públicas</strong>: Oferecem assistência jurídica gratuita para mulheres que não podem pagar um advogado.</li>
+                        <li><strong>Serviços de Saúde</strong>: Hospitais e postos de saúde são importantes para o atendimento de emergências e para o acompanhamento da saúde física e mental das vítimas.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Histórias de Superação</h3>
+                    <p>Conhecer histórias de mulheres que superaram a violência pode ser uma fonte de inspiração e força. Essas narrativas mostram que é possível reconstruir a vida e encontrar a liberdade:</p>
+                    <ul>
+                        <li><strong>Maria</strong>: Após mais de uma década de violência doméstica, Maria encontrou coragem para denunciar seu agressor e hoje inspira outras mulheres com sua história de resiliência.</li>
+                        <li><strong>Ana</strong>: Libertou-se de um relacionamento abusivo e transformou sua experiência em palestras e projetos de empoderamento feminino.</li>
+                        <li><strong>Carla</strong>: Reconstruiu sua vida e se tornou uma voz ativa na luta contra a violência de gênero, mostrando que a vida depois da violência pode ser plena e feliz.</li>
+                    </ul>
+                    <p>Lembre-se: você não está sozinha. Busque ajuda, denuncie e permita-se recomeçar. A sua vida importa!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Base de dados de Delegacias da Mulher no Brasil
+        const delegaciasDatabase = [
+            // São Paulo
+            {
+                "name": "1ª Delegacia de Defesa da Mulher - Centro",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Brigadeiro Tobias, 527 - Luz, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113555",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Registro de boletim de ocorrência, investigação de crimes contra a mulher, medidas protetivas"
+            },
+            {
+                "name": "2ª Delegacia de Defesa da Mulher - Sul",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Brigadeiro Galvão, 1020 - Barra Funda, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113556",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Atendimento especializado, acompanhamento psicossocial, orientação jurídica"
+            },
+            {
+                "name": "3ª Delegacia de Defesa da Mulher - Oeste",
+                "type": "Delegacia da Mulher",
+                "address": "Av. Corifeu de Azevedo Marques, 4300 - Butantã, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113557",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Investigação de violência doméstica, feminicídio, crimes sexuais"
+            },
+            {
+                "name": "Delegacia da Mulher de Guarulhos",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Claudino Barbosa, 313 - Macedo, Guarulhos - SP",
+                "city": "Guarulhos",
+                "state": "SP",
+                "phone": "1124408522",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Atendimento integral à mulher vítima de violência"
+            },
+            {
+                "name": "Delegacia da Mulher de Osasco",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Ari Barroso, 355 - Presidente Altino, Osasco - SP",
+                "city": "Osasco",
+                "state": "SP",
+                "phone": "1136818522",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Registro de ocorrências, investigação, acompanhamento"
+            },
+
+            // Rio de Janeiro
+            {
+                "name": "Delegacia Especial de Atendimento à Mulher - Centro",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Mem de Sá, 219 - Lapa, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122632924",
+                "hours": "24 horas",
+                "services": "Atendimento 24h, registro de ocorrências, medidas protetivas"
+            },
+            {
+                "name": "DEAM Barra da Tijuca",
+                "type": "Delegacia da Mulher",
+                "address": "Av. Ayrton Senna, 2001 - Barra da Tijuca, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2124428315",
+                "hours": "Segunda a sexta: 9h às 18h",
+                "services": "Investigação especializada, acompanhamento psicológico"
+            },
+            {
+                "name": "DEAM Niterói",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Visconde do Rio Branco, 123 - Centro, Niterói - RJ",
+                "city": "Niterói",
+                "state": "RJ",
+                "phone": "2126208200",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento especializado à mulher"
+            },
+
+            // Belo Horizonte
+            {
+                "name": "Delegacia Especializada de Atendimento à Mulher - Centro",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Gonçalves Dias, 2500 - Lourdes, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132387400",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Investigação de crimes contra a mulher, medidas protetivas"
+            },
+            {
+                "name": "DEAM Venda Nova",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Padre Pedro Pinto, 1055 - Venda Nova, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132387401",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Atendimento regionalizado, acompanhamento de casos"
+            },
+
+            // Salvador
+            {
+                "name": "Delegacia Especial de Atendimento à Mulher - Salvador",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Agnelo Brito, s/n - Nazaré, Salvador - BA",
+                "city": "Salvador",
+                "state": "BA",
+                "phone": "7132358522",
+                "hours": "24 horas",
+                "services": "Atendimento 24h, investigação especializada"
+            },
+
+            // Fortaleza
+            {
+                "name": "Delegacia de Defesa da Mulher de Fortaleza",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Teles de Souza, 1320 - Aldeota, Fortaleza - CE",
+                "city": "Fortaleza",
+                "state": "CE",
+                "phone": "8532618522",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Registro de ocorrências, investigação, orientação"
+            },
+
+            // Recife
+            {
+                "name": "Delegacia da Mulher do Recife",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Setúbal, 310 - Boa Vista, Recife - PE",
+                "city": "Recife",
+                "state": "PE",
+                "phone": "8133218522",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento especializado, investigação de crimes"
+            },
+
+            // Porto Alegre
+            {
+                "name": "Delegacia Especializada no Atendimento à Mulher - Porto Alegre",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Andradas, 1000 - Centro, Porto Alegre - RS",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "phone": "5133208522",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Investigação especializada, medidas protetivas"
+            },
+
+            // Curitiba
+            {
+                "name": "Delegacia da Mulher de Curitiba",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Brigadeiro Franco, 2300 - Rebouças, Curitiba - PR",
+                "city": "Curitiba",
+                "state": "PR",
+                "phone": "4133218522",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento integral à mulher vítima de violência"
+            },
+
+            // Brasília
+            {
+                "name": "Delegacia Especial de Atendimento à Mulher - Brasília",
+                "type": "Delegacia da Mulher",
+                "address": "EQS 204/205 - Asa Sul, Brasília - DF",
+                "city": "Brasília",
+                "state": "DF",
+                "phone": "6133218522",
+                "hours": "24 horas",
+                "services": "Atendimento 24h, investigação, acompanhamento"
+            },
+
+            // Goiânia
+            {
+                "name": "Delegacia Especializada no Atendimento à Mulher - Goiânia",
+                "type": "Delegacia da Mulher",
+                "address": "Rua 136, 149 - Setor Sul, Goiânia - GO",
+                "city": "Goiânia",
+                "state": "GO",
+                "phone": "6233218522",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Investigação de crimes contra a mulher"
+            },
+
+            // Florianópolis
+            {
+                "name": "Delegacia de Proteção à Criança, Adolescente, Mulher e Idoso",
+                "type": "Delegacia da Mulher",
+                "address": "Rua Blumenau, 90 - Centro, Florianópolis - SC",
+                "city": "Florianópolis",
+                "state": "SC",
+                "phone": "4833218522",
+                "hours": "Segunda a sexta: 8h às 18h",
+                "services": "Atendimento especializado, investigação"
+            }
+        ];
+
+        // Base de dados de Atendimento Jurídico Gratuito
+        const juridicoDatabase = [
+            // São Paulo
+            {
+                "name": "Defensoria Pública do Estado de São Paulo - Sede",
+                "type": "Defensoria Pública",
+                "address": "Rua Boa Vista, 200 - Centro, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113100",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, orientação em direito de família, medidas protetivas"
+            },
+            {
+                "name": "Centro de Referência e Apoio à Vítima (CRAVI)",
+                "type": "Centro de Apoio",
+                "address": "Rua Barra Funda, 1020 - Barra Funda, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113200",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psicológico, social e jurídico para vítimas de violência"
+            },
+            {
+                "name": "OAB/SP - Comissão da Mulher Advogada",
+                "type": "OAB",
+                "address": "Praça da Sé, 385 - Sé, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113300",
+                "hours": "Segunda a sexta: 9h às 18h",
+                "services": "Orientação jurídica, encaminhamento para advogados especializados"
+            },
+            {
+                "name": "Casa da Mulher Brasileira - São Paulo",
+                "type": "Casa da Mulher",
+                "address": "Rua Líbero Badaró, 425 - Centro, São Paulo - SP",
+                "city": "São Paulo",
+                "state": "SP",
+                "phone": "1133113400",
+                "hours": "24 horas",
+                "services": "Atendimento integral: jurídico, psicológico, social e abrigo"
+            },
+
+            // Rio de Janeiro
+            {
+                "name": "Defensoria Pública do Estado do Rio de Janeiro",
+                "type": "Defensoria Pública",
+                "address": "Av. Marechal Câmara, 314 - Centro, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122632800",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, direito de família, violência doméstica"
+            },
+            {
+                "name": "Centro Integrado de Atendimento à Mulher (CIAM)",
+                "type": "Centro de Apoio",
+                "address": "Rua Araújo Porto Alegre, 71 - Centro, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122632900",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psicológico, social e jurídico"
+            },
+            {
+                "name": "OAB/RJ - Comissão de Defesa dos Direitos da Mulher",
+                "type": "OAB",
+                "address": "Av. Erasmo Braga, 115 - Centro, Rio de Janeiro - RJ",
+                "city": "Rio de Janeiro",
+                "state": "RJ",
+                "phone": "2122633000",
+                "hours": "Segunda a sexta: 9h às 18h",
+                "services": "Orientação jurídica especializada em direitos da mulher"
+            },
+
+            // Belo Horizonte
+            {
+                "name": "Defensoria Pública de Minas Gerais",
+                "type": "Defensoria Pública",
+                "address": "Rua Guajajaras, 1944 - Centro, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132387300",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, violência doméstica"
+            },
+            {
+                "name": "Centro de Apoio à Mulher (BENVINDA)",
+                "type": "Centro de Apoio",
+                "address": "Rua Tupis, 149 - Centro, Belo Horizonte - MG",
+                "city": "Belo Horizonte",
+                "state": "MG",
+                "phone": "3132387350",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psicossocial e jurídico"
+            },
+
+            // Salvador
+            {
+                "name": "Defensoria Pública do Estado da Bahia",
+                "type": "Defensoria Pública",
+                "address": "Rua Pedro Lessa, 123 - Canela, Salvador - BA",
+                "city": "Salvador",
+                "state": "BA",
+                "phone": "7132358400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, direitos da mulher"
+            },
+            {
+                "name": "Casa da Mulher Brasileira - Salvador",
+                "type": "Casa da Mulher",
+                "address": "Rua Agnelo Brito, s/n - Nazaré, Salvador - BA",
+                "city": "Salvador",
+                "state": "BA",
+                "phone": "7132358450",
+                "hours": "24 horas",
+                "services": "Atendimento integral multidisciplinar"
+            },
+
+            // Fortaleza
+            {
+                "name": "Defensoria Pública do Estado do Ceará",
+                "type": "Defensoria Pública",
+                "address": "Rua Assunção, 1100 - José Bonifácio, Fortaleza - CE",
+                "city": "Fortaleza",
+                "state": "CE",
+                "phone": "8532618400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita especializada"
+            },
+            {
+                "name": "Casa da Mulher Brasileira - Fortaleza",
+                "type": "Casa da Mulher",
+                "address": "Rua Teles de Souza, 1320 - Aldeota, Fortaleza - CE",
+                "city": "Fortaleza",
+                "state": "CE",
+                "phone": "8532618450",
+                "hours": "24 horas",
+                "services": "Atendimento integral: jurídico, psicológico, social"
+            },
+
+            // Recife
+            {
+                "name": "Defensoria Pública do Estado de Pernambuco",
+                "type": "Defensoria Pública",
+                "address": "Rua Imperador Dom Pedro II, 200 - Santo Antônio, Recife - PE",
+                "city": "Recife",
+                "state": "PE",
+                "phone": "8133218400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, violência doméstica"
+            },
+            {
+                "name": "Centro da Mulher do Cabo",
+                "type": "Centro de Apoio",
+                "address": "Rua Vigário Tenório, 600 - Centro, Cabo de Santo Agostinho - PE",
+                "city": "Cabo de Santo Agostinho",
+                "state": "PE",
+                "phone": "8133218450",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psicossocial e jurídico"
+            },
+
+            // Porto Alegre
+            {
+                "name": "Defensoria Pública do Estado do Rio Grande do Sul",
+                "type": "Defensoria Pública",
+                "address": "Rua Sete de Setembro, 666 - Centro, Porto Alegre - RS",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "phone": "5133208400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, direitos da mulher"
+            },
+            {
+                "name": "Centro de Referência Especializado de Assistência Social (CREAS)",
+                "type": "Centro de Apoio",
+                "address": "Rua Andradas, 1000 - Centro, Porto Alegre - RS",
+                "city": "Porto Alegre",
+                "state": "RS",
+                "phone": "5133208450",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento social e jurídico especializado"
+            },
+
+            // Curitiba
+            {
+                "name": "Defensoria Pública do Estado do Paraná",
+                "type": "Defensoria Pública",
+                "address": "Rua Kellers, 289 - Centro, Curitiba - PR",
+                "city": "Curitiba",
+                "state": "PR",
+                "phone": "4133218400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, violência contra a mulher"
+            },
+            {
+                "name": "Centro de Atendimento à Mulher (CAM)",
+                "type": "Centro de Apoio",
+                "address": "Rua Brigadeiro Franco, 2300 - Rebouças, Curitiba - PR",
+                "city": "Curitiba",
+                "state": "PR",
+                "phone": "4133218450",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psicossocial e jurídico"
+            },
+
+            // Brasília
+            {
+                "name": "Defensoria Pública do Distrito Federal",
+                "type": "Defensoria Pública",
+                "address": "SIA Trecho 3, Lote 300 - Guará, Brasília - DF",
+                "city": "Brasília",
+                "state": "DF",
+                "phone": "6133218400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita especializada"
+            },
+            {
+                "name": "Casa da Mulher Brasileira - Brasília",
+                "type": "Casa da Mulher",
+                "address": "EQS 204/205 - Asa Sul, Brasília - DF",
+                "city": "Brasília",
+                "state": "DF",
+                "phone": "6133218450",
+                "hours": "24 horas",
+                "services": "Atendimento integral multidisciplinar"
+            },
+
+            // Goiânia
+            {
+                "name": "Defensoria Pública do Estado de Goiás",
+                "type": "Defensoria Pública",
+                "address": "Rua 70, 661 - Centro, Goiânia - GO",
+                "city": "Goiânia",
+                "state": "GO",
+                "phone": "6233218400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita, direitos da mulher"
+            },
+
+            // Florianópolis
+            {
+                "name": "Defensoria Pública do Estado de Santa Catarina",
+                "type": "Defensoria Pública",
+                "address": "Rua Bocaiúva, 1750 - Centro, Florianópolis - SC",
+                "city": "Florianópolis",
+                "state": "SC",
+                "phone": "4833218400",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Assistência jurídica gratuita especializada"
+            },
+            {
+                "name": "Centro de Atendimento à Mulher Vítima de Violência",
+                "type": "Centro de Apoio",
+                "address": "Rua Blumenau, 90 - Centro, Florianópolis - SC",
+                "city": "Florianópolis",
+                "state": "SC",
+                "phone": "4833218450",
+                "hours": "Segunda a sexta: 8h às 17h",
+                "services": "Atendimento psicossocial e jurídico"
+            }
+        ];
+
+        // Função para normalizar texto (remover acentos e converter para minúsculas)
+        function normalizeText(text) {
+            if (!text) return '';
+            return text.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9\s]/g, '')
+                .trim();
+        }
+
+        // Função para calcular similaridade entre strings
+        function calculateSimilarity(str1, str2) {
+            if (!str1 || !str2) return 0;
+            
+            const normalized1 = normalizeText(str1);
+            const normalized2 = normalizeText(str2);
+            
+            // Verificar correspondência exata
+            if (normalized1 === normalized2) return 1;
+            
+            // Verificar se uma string contém a outra
+            if (normalized1.includes(normalized2) || normalized2.includes(normalized1)) {
+                return 0.9;
+            }
+            
+            // Calcular similaridade por caracteres comuns
+            const maxLength = Math.max(normalized1.length, normalized2.length);
+            if (maxLength === 0) return 0;
+            
+            let matches = 0;
+            const minLength = Math.min(normalized1.length, normalized2.length);
+            
+            for (let i = 0; i < minLength; i++) {
+                if (normalized1[i] === normalized2[i]) {
+                    matches++;
+                }
+            }
+            
+            return matches / maxLength;
+        }
+
+        // Função para obter cidades similares
+        function getSimilarCities(searchCity, database) {
+            const allCities = [...new Set(database.map(item => item.city))];
+            const suggestions = [];
+            
+            allCities.forEach(city => {
+                const similarity = calculateSimilarity(searchCity, city);
+                if (similarity > 0.3) {
+                    suggestions.push({ city, similarity });
+                }
+            });
+            
+            return suggestions
+                .sort((a, b) => b.similarity - a.similarity)
+                .slice(0, 5)
+                .map(item => item.city);
+        }
+
+        // Função para buscar delegacias
+        function searchDelegacias() {
+            const citySearch = document.getElementById('citySearchDelegacia').value.trim();
+            const stateFilter = document.getElementById('stateFilterDelegacia').value;
+            const resultsDiv = document.getElementById('searchResultsDelegacia');
+            const searchBtn = document.getElementById('searchBtnDelegacia');
+            
+            // Mostrar loading
+            searchBtn.innerHTML = '<span class="loading"></span> Buscando...';
+            searchBtn.disabled = true;
+            
+            setTimeout(() => {
+                if (!citySearch && !stateFilter) {
+                    resultsDiv.innerHTML = '<div class="no-results">Por favor, digite uma cidade ou selecione um estado para buscar.</div>';
+                    resetSearchButton('searchBtnDelegacia', '🏛️ Buscar Delegacias da Mulher');
+                    return;
+                }
+                
+                let filteredDelegacias = delegaciasDatabase.filter(delegacia => {
+                    // Filtro por estado
+                    if (stateFilter && delegacia.state !== stateFilter) {
+                        return false;
+                    }
+                    
+                    // Filtro por cidade
+                    if (citySearch) {
+                        const similarity = calculateSimilarity(citySearch, delegacia.city);
+                        return similarity > 0.4;
+                    }
+                    
+                    return true;
+                });
+                
+                if (filteredDelegacias.length === 0) {
+                    const similarCities = getSimilarCities(citySearch, delegaciasDatabase);
+                    let noResultsHTML = '<div class="no-results">';
+                    noResultsHTML += '<h4>🔍 Nenhuma delegacia encontrada</h4>';
+                    noResultsHTML += `<p>Não encontramos delegacias em "${citySearch}"`;
+                    if (stateFilter) {
+                        const stateName = document.querySelector(`#stateFilterDelegacia option[value="${stateFilter}"]`).textContent;
+                        noResultsHTML += ` - ${stateName}`;
+                    }
+                    noResultsHTML += '.</p>';
+                    
+                    if (similarCities.length > 0) {
+                        noResultsHTML += '<p><strong>🏙️ Cidades próximas com delegacias disponíveis:</strong></p>';
+                        noResultsHTML += '<ul>';
+                        similarCities.forEach(city => {
+                            noResultsHTML += `<li><a href="#" onclick="searchSimilarCityDelegacia('${city}')" style="color: #8B5CF6; text-decoration: none; font-weight: 500;">${city}</a></li>`;
+                        });
+                        noResultsHTML += '</ul>';
+                    }
+                    
+                    noResultsHTML += '<p><em>💡 Dica: Tente buscar por cidades maiores da sua região.</em></p>';
+                    noResultsHTML += '</div>';
+                    
+                    resultsDiv.innerHTML = noResultsHTML;
+                    resetSearchButton('searchBtnDelegacia', '🏛️ Buscar Delegacias da Mulher');
+                    return;
+                }
+                
+                // Ordenar por relevância
+                if (citySearch) {
+                    filteredDelegacias.sort((a, b) => {
+                        const similarityA = calculateSimilarity(citySearch, a.city);
+                        const similarityB = calculateSimilarity(citySearch, b.city);
+                        return similarityB - similarityA;
+                    });
+                }
+                
+                let resultsHTML = `<h4>🎯 Encontradas ${filteredDelegacias.length} delegacia(s)</h4>`;
+                
+                filteredDelegacias.forEach((delegacia, index) => {
+                    resultsHTML += `<div class="service-result" style="animation-delay: ${index * 0.1}s">`;
+                    resultsHTML += `<h5>🏛️ ${delegacia.name}</h5>`;
+                    resultsHTML += `<p><strong>📍 Localização:</strong> ${delegacia.city} - ${delegacia.state}</p>`;
+                    resultsHTML += `<p><strong>🏠 Endereço:</strong> ${delegacia.address}</p>`;
+                    resultsHTML += `<p><strong>📞 Telefone:</strong> <a href="tel:${delegacia.phone}" style="color: #8B5CF6; text-decoration: none;">${formatPhone(delegacia.phone)}</a></p>`;
+                    resultsHTML += `<p><strong>🕒 Horário:</strong> ${delegacia.hours}</p>`;
+                    resultsHTML += `<p><strong>⚖️ Serviços:</strong> ${delegacia.services}</p>`;
+                    resultsHTML += '</div>';
+                });
+                
+                resultsDiv.innerHTML = resultsHTML;
+                resetSearchButton('searchBtnDelegacia', '🏛️ Buscar Delegacias da Mulher');
+                
+                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 800);
+        }
+
+        // Função para buscar atendimento jurídico
+        function searchJuridico() {
+            const citySearch = document.getElementById('citySearchJuridico').value.trim();
+            const stateFilter = document.getElementById('stateFilterJuridico').value;
+            const resultsDiv = document.getElementById('searchResultsJuridico');
+            const searchBtn = document.getElementById('searchBtnJuridico');
+            
+            // Mostrar loading
+            searchBtn.innerHTML = '<span class="loading"></span> Buscando...';
+            searchBtn.disabled = true;
+            
+            setTimeout(() => {
+                if (!citySearch && !stateFilter) {
+                    resultsDiv.innerHTML = '<div class="no-results">Por favor, digite uma cidade ou selecione um estado para buscar.</div>';
+                    resetSearchButton('searchBtnJuridico', '⚖️ Buscar Atendimento Jurídico');
+                    return;
+                }
+                
+                let filteredJuridico = juridicoDatabase.filter(juridico => {
+                    // Filtro por estado
+                    if (stateFilter && juridico.state !== stateFilter) {
+                        return false;
+                    }
+                    
+                    // Filtro por cidade
+                    if (citySearch) {
+                        const similarity = calculateSimilarity(citySearch, juridico.city);
+                        return similarity > 0.4;
+                    }
+                    
+                    return true;
+                });
+                
+                if (filteredJuridico.length === 0) {
+                    const similarCities = getSimilarCities(citySearch, juridicoDatabase);
+                    let noResultsHTML = '<div class="no-results">';
+                    noResultsHTML += '<h4>🔍 Nenhum serviço jurídico encontrado</h4>';
+                    noResultsHTML += `<p>Não encontramos serviços jurídicos em "${citySearch}"`;
+                    if (stateFilter) {
+                        const stateName = document.querySelector(`#stateFilterJuridico option[value="${stateFilter}"]`).textContent;
+                        noResultsHTML += ` - ${stateName}`;
+                    }
+                    noResultsHTML += '.</p>';
+                    
+                    if (similarCities.length > 0) {
+                        noResultsHTML += '<p><strong>🏙️ Cidades próximas com serviços disponíveis:</strong></p>';
+                        noResultsHTML += '<ul>';
+                        similarCities.forEach(city => {
+                            noResultsHTML += `<li><a href="#" onclick="searchSimilarCityJuridico('${city}')" style="color: #8B5CF6; text-decoration: none; font-weight: 500;">${city}</a></li>`;
+                        });
+                        noResultsHTML += '</ul>';
+                    }
+                    
+                    noResultsHTML += '<p><em>💡 Dica: Tente buscar por cidades maiores da sua região.</em></p>';
+                    noResultsHTML += '</div>';
+                    
+                    resultsDiv.innerHTML = noResultsHTML;
+                    resetSearchButton('searchBtnJuridico', '⚖️ Buscar Atendimento Jurídico');
+                    return;
+                }
+                
+                // Ordenar por relevância
+                if (citySearch) {
+                    filteredJuridico.sort((a, b) => {
+                        const similarityA = calculateSimilarity(citySearch, a.city);
+                        const similarityB = calculateSimilarity(citySearch, b.city);
+                        return similarityB - similarityA;
+                    });
+                }
+                
+                let resultsHTML = `<h4>🎯 Encontrados ${filteredJuridico.length} serviço(s) jurídico(s)</h4>`;
+                
+                filteredJuridico.forEach((juridico, index) => {
+                    resultsHTML += `<div class="service-result" style="animation-delay: ${index * 0.1}s">`;
+                    resultsHTML += `<h5>⚖️ ${juridico.name}</h5>`;
+                    resultsHTML += `<p><strong>🏢 Tipo:</strong> ${juridico.type}</p>`;
+                    resultsHTML += `<p><strong>📍 Localização:</strong> ${juridico.city} - ${juridico.state}</p>`;
+                    resultsHTML += `<p><strong>🏠 Endereço:</strong> ${juridico.address}</p>`;
+                    resultsHTML += `<p><strong>📞 Telefone:</strong> <a href="tel:${juridico.phone}" style="color: #8B5CF6; text-decoration: none;">${formatPhone(juridico.phone)}</a></p>`;
+                    resultsHTML += `<p><strong>🕒 Horário:</strong> ${juridico.hours}</p>`;
+                    resultsHTML += `<p><strong>📋 Serviços:</strong> ${juridico.services}</p>`;
+                    resultsHTML += '</div>';
+                });
+                
+                resultsDiv.innerHTML = resultsHTML;
+                resetSearchButton('searchBtnJuridico', '⚖️ Buscar Atendimento Jurídico');
+                
+                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 800);
+        }
+
+        // Função para resetar botão de busca
+        function resetSearchButton(buttonId, originalText) {
+            const searchBtn = document.getElementById(buttonId);
+            searchBtn.innerHTML = originalText;
+            searchBtn.disabled = false;
+        }
+
+        // Função para formatar telefone
+        function formatPhone(phone) {
+            if (!phone) return '';
+            
+            const cleaned = phone.replace(/\D/g, '');
+            
+            if (cleaned.length === 11) {
+                return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7)}`;
+            } else if (cleaned.length === 10) {
+                return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 6)}-${cleaned.slice(6)}`;
+            }
+            
+            return phone;
+        }
+
+        // Funções para buscar por cidade similar
+        function searchSimilarCityDelegacia(city) {
+            document.getElementById('citySearchDelegacia').value = city;
+            searchDelegacias();
+        }
+
+        function searchSimilarCityJuridico(city) {
+            document.getElementById('citySearchJuridico').value = city;
+            searchJuridico();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Delegacias
+            const searchBtnDelegacia = document.getElementById('searchBtnDelegacia');
+            const citySearchDelegacia = document.getElementById('citySearchDelegacia');
+            const stateFilterDelegacia = document.getElementById('stateFilterDelegacia');
+            
+            if (searchBtnDelegacia) {
+                searchBtnDelegacia.addEventListener('click', searchDelegacias);
+            }
+            
+            if (citySearchDelegacia) {
+                citySearchDelegacia.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchDelegacias();
+                    }
+                });
+            }
+            
+            if (stateFilterDelegacia) {
+                stateFilterDelegacia.addEventListener('change', function() {
+                    if (this.value && document.getElementById('citySearchDelegacia').value.trim()) {
+                        searchDelegacias();
+                    }
+                });
+            }
+
+            // Jurídico
+            const searchBtnJuridico = document.getElementById('searchBtnJuridico');
+            const citySearchJuridico = document.getElementById('citySearchJuridico');
+            const stateFilterJuridico = document.getElementById('stateFilterJuridico');
+            
+            if (searchBtnJuridico) {
+                searchBtnJuridico.addEventListener('click', searchJuridico);
+            }
+            
+            if (citySearchJuridico) {
+                citySearchJuridico.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchJuridico();
+                    }
+                });
+            }
+            
+            if (stateFilterJuridico) {
+                stateFilterJuridico.addEventListener('change', function() {
+                    if (this.value && document.getElementById('citySearchJuridico').value.trim()) {
+                        searchJuridico();
+                    }
+                });
+            }
+        });
+    </script>
+
+    <style>
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #8B5CF6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .service-result {
+            background-color: #2e1a47;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #8B5CF6;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-result h5 {
+            color: #8B5CF6;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .service-result p {
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+
+        .no-results {
+            background-color: #2e1a47;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed #8B5CF6;
+        }
+
+        .no-results h4 {
+            color: #8B5CF6;
+            margin-bottom: 1rem;
+        }
+
+        .no-results ul {
+            text-align: left;
+            max-width: 300px;
+            margin: 1rem auto;
+        }
+
+        .search-inputs {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .search-input, .search-select {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #8B5CF6;
+            border-radius: 8px;
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-input:focus, .search-select:focus {
+            outline: none;
+            border-color: #9c27b0;
+            box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.1);
+        }
+
+        .location-btn {
+            background: linear-gradient(135deg, #8B5CF6 0%, #9c27b0 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .location-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .location-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .location-section {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #8B5CF6;
+        }
+
+        @media (max-width: 768px) {
+            .search-inputs {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>

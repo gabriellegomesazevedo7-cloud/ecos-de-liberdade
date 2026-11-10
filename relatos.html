@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatos - Ecos de Liberdade</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/acessibilidade.css">
+</head>
+<body>
+    <!-- Barra de Acessibilidade -->
+    <div class="barra-acessibilidade">
+        <span class="barra-acessibilidade-label"></span>
+        <button class="btn-acessibilidade btn-diminuir-fonte" onclick="diminuirFonte()" title="Diminuir tamanho da fonte">
+            A-
+        </button>
+        <button class="btn-acessibilidade btn-resetar-fonte" onclick="resetarFonte()" title="Tamanho normal da fonte">
+            A
+        </button>
+        <button class="btn-acessibilidade btn-aumentar-fonte" onclick="aumentarFonte()" title="Aumentar tamanho da fonte">
+            A+
+        </button>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Logo Ecos de Liberdade" class="logo-dark">
+            <img src="static/images/logo_light.png" alt="Logo Ecos de Liberdade" class="logo-light">
+            <div class="logo-text">
+                <h1>Ecos de</h1>
+                <h1>Liberdade</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="relatos.html" class="active">Relatos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" onclick="window.location.href='conectar.php'">Cadastre-se</button>
+            <button class="login-btn" onclick="window.location.href='entrar.html'">Entrar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h2 class="page-title">Relatos</h2>
+            <div class="content-box">
+                <p class="intro-text">Compartilhamos aqui histórias reais de mulheres que enfrentaram situações de violência e encontraram força para recomeçar. Seus relatos são fonte de inspiração e esperança para outras mulheres que possam estar passando por situações semelhantes.</p>
+                
+                <!-- Histórias pré-definidas para garantir que sempre apareçam -->
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar"></div>
+                            <div class="testimonial-info">
+                                <h3>Maria</h3>
+                                <p>34 anos, São Paulo</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Depois de 8 anos em um relacionamento abusivo, encontrei coragem para denunciar e buscar ajuda. O apoio que recebi do Ecos de Liberdade foi fundamental para reconstruir minha vida e recuperar minha autoestima. Hoje sou uma mulher independente e feliz."</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar"></div>
+                            <div class="testimonial-info">
+                                <h3>Carla</h3>
+                                <p>27 anos, Rio de Janeiro</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Sofri assédio no ambiente de trabalho por anos e tinha medo de perder meu emprego se denunciasse. Com o suporte jurídico e psicológico que recebi, consegui enfrentar a situação. Hoje trabalho em um ambiente saudável e ajudo outras mulheres a reconhecerem seus direitos."</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar"></div>
+                            <div class="testimonial-info">
+                                <h3>Juliana</h3>
+                                <p>42 anos, Belo Horizonte</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"As aulas de defesa pessoal mudaram minha vida. Não apenas aprendi técnicas para me proteger, mas também recuperei a confiança que havia perdido. Saber que posso me defender me deu uma sensação de liberdade que eu não conhecia há muito tempo."</p>
+                    </div>
+                </div>
+                
+                <!-- Container para histórias dinâmicas -->
+                <h3 style="margin-top: 2rem; color: #9c27b0;">Histórias Compartilhadas Recentemente</h3>
+                <div class="testimonials" id="historias-container">
+                    <!-- As histórias serão carregadas dinamicamente pelo JavaScript -->
+                </div>
+                
+                <div class="share-story">
+                    <h3>Compartilhe Sua História</h3>
+                    <p>Seu relato pode inspirar e ajudar outras mulheres. Se você deseja compartilhar sua experiência, preencha o formulário abaixo. Sua identidade será preservada, se assim desejar.</p>
+                    <button class="share-btn" onclick="window.location.href='compartilhar_historia.html'">Compartilhar Minha História</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ecos de Liberdade - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="static/js/scripts.js"></script>
+    <script src="static/js/historias.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        renderizarHistorias('historias-container');
+    });
+</script>
+<script>
+    const form = document.getElementById('story-form');
+    const successMessage = document.getElementById('success-message');
+    const historiaContainer = document.getElementById('historia-enviada-container');
+    const historiaCard = document.getElementById('historia-enviada-card');
+
+    successMessage.style.display = 'none';
+    historiaContainer.style.display = 'none';
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const titulo = document.getElementById('story-title').value.trim();
+        const conteudo = document.getElementById('story-content').value.trim();
+        const nome = document.getElementById('story-author').value.trim() || 'Anônimo';
+        const cidade = document.getElementById('story-location').value.trim() || 'Local não informado';
+        const idade = document.getElementById('story-age').value.trim();
+        const anonimo = document.getElementById('anonymous-toggle').checked;
+
+        if (!conteudo) {
+            alert('Por favor, escreva sua história.');
+            return;
+        }
+
+        const historia = {
+            titulo: titulo || 'Sem título',
+            conteudo,
+            nome: anonimo ? 'Anônimo' : nome,
+            cidade: anonimo ? 'Local não informado' : cidade,
+            idade: anonimo ? '' : idade
+        };
+
+        // Salvar no localStorage
+        const historias = JSON.parse(localStorage.getItem('historias') || '[]');
+        historias.push(historia);
+        localStorage.setItem('historias', JSON.stringify(historias));
+
+        // Exibir mensagem de sucesso
+        successMessage.style.display = 'block';
+        historiaContainer.style.display = 'block';
+
+        // Renderizar a história enviada abaixo
+        historiaCard.innerHTML = `
+            <div class="testimonial-header">
+                <div class="testimonial-avatar"></div>
+                <div class="testimonial-info">
+                    <h3>${historia.nome}</h3>
+                    <p>${historia.idade ? `${historia.idade} anos, ` : ''}${historia.cidade}</p>
+                </div>
+            </div>
+            <h4 style="margin-bottom: 0.5rem;">${historia.titulo}</h4>
+            <p class="testimonial-text">"${historia.conteudo}"</p>
+        `;
+
+        form.reset();
+    });
+    fetch('php/listar_relatos.php')
+    .then(response => response.json())
+    .then(relatos => {
+        const container = document.getElementById('historias-container');
+        container.innerHTML = '';
+
+        relatos.forEach(h => {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+
+            card.innerHTML = `
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar"></div>
+                    <div class="testimonial-info">
+                        <h3>${h.anonimo == 1 ? 'Anônimo' : h.nome}</h3>
+                        <p>${h.idade ? `${h.idade} anos, ` : ''}${h.cidade}</p>
+                    </div>
+                </div>
+                <h4 style="margin-bottom: 0.5rem;">${h.titulo}</h4>
+                <p class="testimonial-text">"${h.conteudo}"</p>
+            `;
+
+            container.appendChild(card);
+        });
+    });
+<div class="testimonials" id="historias-container">
+    <!-- Relatos vão aparecer aqui -->
+</div>
+
+</script>
+
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="static/js/acessibilidade.js"></script>
+</body>
+</html>
