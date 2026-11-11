@@ -29,17 +29,7 @@ O projeto tem como objetivo combater a violência contra a mulher por meio da co
 
 O projeto utiliza tons de roxo e lilás para representar conscientização, força e acolhimento. Sua mascote, Liberty, simboliza a luta pela liberdade e pela proteção das mulheres.
 
-## Equipe de desenvolvimento
 
-- Gabrielle Gomes de Azevedo
-- Lucas dos Anjos Silva
-- Nicoly Duarte da Silva
-- Vívian Cristina Doris Anastacio
-
-**Instituição:** ETEC de Rio Grande da Serra  
-**Curso:** Técnico em Informática para Internet  
-**Orientador:** Prof. José Victor Moreira  
-**Ano:** 2025
 
 ## Observação
 
